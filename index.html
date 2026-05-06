@@ -641,7 +641,115 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   SLIDE 9: Steps
+   SLIDE 9: How Skills Work — Use Case Cards
+   ========================================== */
+.use-case-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.use-case-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+}
+
+.use-case-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.use-case-number {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--accent-coral-soft);
+  color: var(--accent-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.use-case-title-text {
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.use-case-section-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 6px;
+}
+
+.use-case-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.use-case-tag {
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  font-size: 12px;
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+}
+
+.use-case-skill-box {
+  background: var(--accent-coral-soft);
+  border: 1px solid rgba(255, 107, 91, 0.25);
+  border-radius: var(--radius-md);
+  padding: 10px 14px;
+  margin-bottom: 4px;
+}
+
+.use-case-skill-item {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.use-case-skill-item::before {
+  content: '→ ';
+  color: var(--accent-coral);
+  font-weight: 600;
+}
+
+.use-case-arrow {
+  display: flex;
+  justify-content: center;
+  padding: 6px 0;
+}
+
+.use-case-arrow svg {
+  width: 16px;
+  height: 16px;
+}
+
+.use-case-prompt {
+  font-style: italic;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ==========================================
+   SLIDE 10: Steps
    ========================================== */
 .steps-with-loop {
   position: relative;
@@ -688,7 +796,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   SLIDE 10: Mock Dashboard
+   SLIDE 11: Mock Dashboard
    ========================================== */
 .dashboard-mock {
   background: var(--bg-card);
@@ -877,7 +985,7 @@ h1, h2, h3 {
 }
 
 /* ==========================================
-   SLIDE 11: Timeline
+   SLIDE 12: Timeline
    ========================================== */
 .timeline-phases {
   display: grid;
@@ -1179,9 +1287,107 @@ h1, h2, h3 {
 </section>
 
 <!-- ==========================================
-     SLIDE 9: Our Goal / 4 Steps
+     SLIDE 9: How Skills Work — Use Case Examples
      ========================================== -->
 <section class="slide" data-slide="9">
+  <div class="slide-inner">
+    <h2 class="slide-headline">How it works: building personalized AI skills from your company's knowledge</h2>
+    <div class="use-case-grid">
+
+      <!-- Use Case 1: Pitch Deck -->
+      <div class="use-case-card">
+        <div class="use-case-title">
+          <div class="use-case-number">1</div>
+          <div class="use-case-title-text">Pitch Deck Creation</div>
+        </div>
+
+        <div class="use-case-section-label">We upload</div>
+        <div class="use-case-tags">
+          <span class="use-case-tag">Past pitch decks</span>
+          <span class="use-case-tag">Current company data</span>
+          <span class="use-case-tag">Brand standards</span>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Skill learns</div>
+        <div class="use-case-skill-box">
+          <div class="use-case-skill-item">Format, layout &amp; content structure</div>
+          <div class="use-case-skill-item">Tone &amp; standard pitch material</div>
+          <div class="use-case-skill-item">Live data context (patients, payers)</div>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Employee asks</div>
+        <div class="use-case-prompt">"Create Q3 investor update deck"</div>
+      </div>
+
+      <!-- Use Case 2: Legal Contract Review -->
+      <div class="use-case-card">
+        <div class="use-case-title">
+          <div class="use-case-number">2</div>
+          <div class="use-case-title-text">Legal Contract Review</div>
+        </div>
+
+        <div class="use-case-section-label">We upload</div>
+        <div class="use-case-tags">
+          <span class="use-case-tag">Final contracts</span>
+          <span class="use-case-tag">Past red-lines &amp; negotiations</span>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Skill learns</div>
+        <div class="use-case-skill-box">
+          <div class="use-case-skill-item">What lawyers changed &amp; fought for</div>
+          <div class="use-case-skill-item">Priorities (e.g. data rights)</div>
+          <div class="use-case-skill-item">Interviews stakeholders on critical terms</div>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Employee asks</div>
+        <div class="use-case-prompt">"Review this vendor agreement"</div>
+      </div>
+
+      <!-- Use Case 3: Exec Briefing Memos -->
+      <div class="use-case-card">
+        <div class="use-case-title">
+          <div class="use-case-number">3</div>
+          <div class="use-case-title-text">Exec Briefing Memos</div>
+        </div>
+
+        <div class="use-case-section-label">We upload</div>
+        <div class="use-case-tags">
+          <span class="use-case-tag">Memo templates</span>
+          <span class="use-case-tag">Company KnowledgeBase</span>
+          <span class="use-case-tag">Context &amp; principles</span>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Skill learns</div>
+        <div class="use-case-skill-box">
+          <div class="use-case-skill-item">Memo structure &amp; strategic context</div>
+          <div class="use-case-skill-item">How decisions fit company strategy</div>
+          <div class="use-case-skill-item">Risk identification patterns</div>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Employee asks</div>
+        <div class="use-case-prompt">"Summarize yesterday's leadership meeting"</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SLIDE 10: Our Goal / 4 Steps
+     ========================================== -->
+<section class="slide" data-slide="10">
   <div class="slide-panel">
     <h2 class="slide-headline">Our goal is to 10x the value you are getting from GenAI in the workplace</h2>
     <p class="slide-subhead">We will ingest data and documents from [Company] for the initial deployment, but we will continue to iterate and optimize the KnowledgeBase and Skills libraries to incorporate learnings from use.</p>
@@ -1211,9 +1417,9 @@ h1, h2, h3 {
 </section>
 
 <!-- ==========================================
-     SLIDE 10: Company KPI — Mock Dashboard
+     SLIDE 11: Company KPI — Mock Dashboard
      ========================================== -->
-<section class="slide" data-slide="10">
+<section class="slide" data-slide="11">
   <div class="slide-inner">
     <h2 class="slide-headline">AI usage should be a company KPI</h2>
     <p class="slide-subhead" style="margin-bottom: 20px;">Optionally, we can monitor and report on AI usage across the company and highlight top use cases and areas for improvement</p>
@@ -1333,9 +1539,9 @@ h1, h2, h3 {
 </section>
 
 <!-- ==========================================
-     SLIDE 11: Process & Timeline
+     SLIDE 12: Process & Timeline
      ========================================== -->
-<section class="slide" data-slide="11">
+<section class="slide" data-slide="12">
   <div class="slide-inner">
     <h2 class="slide-headline">Process and timelines for implementation</h2>
     <p class="slide-subhead" style="margin-bottom: 24px;">We typically get customers live in ~4 weeks, and then do weekly checkins until we are all happy with the implementation. Following the implentation phase, we will have QBRs with recommended improvements every 3 months.</p>
