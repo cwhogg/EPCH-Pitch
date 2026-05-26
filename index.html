@@ -855,6 +855,58 @@ h1, h2, h3 {
   margin-left: auto;
 }
 
+/* Foundation Skills (sibling Skills this one activates) */
+.skill-imports {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dashed rgba(255, 143, 107, 0.35);
+}
+
+.skill-imports-label {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10px;
+  font-weight: 600;
+  color: #FF8F6B;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.foundation-skill {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  padding: 6px 10px;
+  background: rgba(255, 107, 91, 0.10);
+  border: 1px solid rgba(255, 107, 91, 0.30);
+  border-radius: 6px;
+  margin-bottom: 5px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 10.5px;
+}
+
+.foundation-skill:last-child { margin-bottom: 0; }
+
+.foundation-skill-icon {
+  font-size: 10px;
+  flex-shrink: 0;
+}
+
+.foundation-skill-name {
+  color: #FFB39E;
+  font-weight: 600;
+}
+
+.foundation-skill-note {
+  color: #94918C;
+  font-style: italic;
+  font-size: 10px;
+  margin-left: auto;
+}
+
 .skill-explain {
   display: flex;
   flex-direction: column;
@@ -2019,6 +2071,31 @@ h1, h2, h3 {
           <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>bcbs-fl-march-2024.md</span><span class="t-note">past deck</span></div>
           <div class="t-row"><span class="t-folder"><span class="t-icon">📁</span>templates/</span></div>
         </div>
+
+        <div class="skill-imports">
+          <div class="skill-imports-label">
+            <svg width="11" height="11" viewBox="0 0 16 16" fill="none" style="vertical-align: -1px;">
+              <path d="M3 9 L8 4 L13 9" stroke="#FF8F6B" stroke-width="1.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M8 4 v9" stroke="#FF8F6B" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            activates foundation Skills
+          </div>
+          <div class="foundation-skill">
+            <span class="foundation-skill-icon">📁</span>
+            <span class="foundation-skill-name">../marley-principles/</span>
+            <span class="foundation-skill-note">what Marley believes</span>
+          </div>
+          <div class="foundation-skill">
+            <span class="foundation-skill-icon">📁</span>
+            <span class="foundation-skill-name">../marley-voice/</span>
+            <span class="foundation-skill-note">voice · banned phrases</span>
+          </div>
+          <div class="foundation-skill">
+            <span class="foundation-skill-icon">📁</span>
+            <span class="foundation-skill-name">../marley-context/</span>
+            <span class="foundation-skill-note">company · market · pipeline</span>
+          </div>
+        </div>
       </div>
 
       <div class="skill-explain">
@@ -2062,8 +2139,16 @@ h1, h2, h3 {
           </div>
         </div>
 
+        <div class="skill-explain-row">
+          <div class="skill-explain-num">4</div>
+          <div>
+            <div class="skill-explain-title">Foundation Skills — shared across the library</div>
+            <div class="skill-explain-body">When activated, this Skill pulls in sibling foundation Skills (<code>marley-principles</code>, <code>marley-voice</code>, <code>marley-context</code>) so voice, principles and current-state numbers stay consistent across every Skill — write once, use everywhere.</div>
+          </div>
+        </div>
+
         <div class="skill-bundle-footer">
-          <strong>One folder.</strong> Self-contained. Versioned. Includes a worked past deck (BCBS-FL) as the quality reference. Travels into your Claude Chat as-is.
+          <strong>One folder + shared foundations.</strong> Self-contained per use case. Includes a worked past deck (BCBS-FL) as quality reference. Travels into your Claude Chat as-is.
         </div>
       </div>
     </div>
