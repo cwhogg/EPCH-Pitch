@@ -745,6 +745,26 @@ h1, h2, h3 {
   margin-bottom: 2px;
 }
 
+.skill-card-flavors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: 6px;
+  padding-top: 8px;
+  border-top: 1px dashed var(--border-default);
+}
+
+.skill-card-flavor {
+  font-family: var(--font-body);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  padding: 2px 8px;
+  background: var(--bg-secondary);
+  color: var(--text-secondary);
+  border-radius: 999px;
+}
+
 .skill-card-title {
   font-family: var(--font-display);
   font-weight: 600;
@@ -2276,10 +2296,20 @@ h1, h2, h3 {
           <div class="skill-card">
             <div class="skill-card-title">Pitch Deck Skill</div>
             <div class="skill-card-meta">Includes: brand assets, past decks, voice rules</div>
+            <div class="skill-card-flavors">
+              <span class="skill-card-flavor">payer</span>
+              <span class="skill-card-flavor">IDN</span>
+              <span class="skill-card-flavor">employer</span>
+            </div>
           </div>
           <div class="skill-card">
             <div class="skill-card-title">Briefing Memo Skill</div>
             <div class="skill-card-meta">Includes: templates, principles, KB excerpts</div>
+            <div class="skill-card-flavors">
+              <span class="skill-card-flavor">exec</span>
+              <span class="skill-card-flavor">update (data)</span>
+              <span class="skill-card-flavor">decision</span>
+            </div>
           </div>
         </div>
         <div class="skill-bundle-note">Each Skill is a self-contained bundle — files, prompts and assets travel together.</div>
@@ -3191,7 +3221,7 @@ h1, h2, h3 {
         </g>
 
         <!-- Middle: iteration loop -->
-        <g transform="translate(250, 30)">
+        <g transform="translate(240, 30)">
           <!-- circular loop -->
           <circle cx="100" cy="90" r="42" stroke="#FF6B5B" stroke-width="1.6" fill="none" stroke-dasharray="6 5"/>
           <!-- arrows around circle (clockwise rotation hint) -->
@@ -3209,13 +3239,13 @@ h1, h2, h3 {
 
         <!-- Arrow → company -->
         <g>
-          <path d="M464 120 L504 120" stroke="#FF6B5B" stroke-width="2" stroke-linecap="round" fill="none"/>
-          <polygon points="500,113 514,120 500,127" fill="#FF6B5B"/>
-          <text x="488" y="106" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" fill="#FF6B5B" letter-spacing="0.06em">ROLLOUT</text>
+          <path d="M494 120 L532 120" stroke="#FF6B5B" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <polygon points="528,113 540,120 528,127" fill="#FF6B5B"/>
+          <text x="513" y="106" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" fill="#FF6B5B" letter-spacing="0.06em">ROLLOUT</text>
         </g>
 
         <!-- Company-wide grid (right) -->
-        <g transform="translate(520, 40)">
+        <g transform="translate(540, 40)">
           <rect x="0" y="0" width="160" height="160" rx="14" fill="#1C1917"/>
           <text x="80" y="22" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#FFB39E" letter-spacing="0.08em">WHOLE COMPANY</text>
           <!-- grid of dots -->
