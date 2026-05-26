@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=1200">
 <title>EPCH — Helping you move from GenericAI to GenAI</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
@@ -449,6 +450,73 @@ h1, h2, h3 {
   font-weight: 600;
 }
 
+/* Primary statement (dominant) */
+.dramatic-primary {
+  background: linear-gradient(135deg, #ff6b5b 0%, #ff8f6b 100%);
+  border-radius: var(--radius-xl);
+  padding: 36px 44px;
+  margin-bottom: 28px;
+  box-shadow: 0 10px 30px rgba(255, 107, 91, 0.28);
+  position: relative;
+}
+
+.dramatic-primary-label {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 12px;
+}
+
+.dramatic-primary-body {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 32px;
+  letter-spacing: -0.02em;
+  line-height: 1.25;
+  color: white;
+}
+
+.dramatic-primary-body strong {
+  font-weight: 700;
+  color: white;
+}
+
+.dramatic-primary-body .highlight {
+  color: white;
+  font-weight: 700;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+  padding-bottom: 1px;
+}
+
+/* Secondary statement */
+.dramatic-secondary {
+  padding: 20px 32px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid rgba(255, 107, 91, 0.45);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  box-shadow: var(--shadow-card);
+}
+
+.dramatic-secondary p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.dramatic-secondary strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.dramatic-secondary .highlight {
+  color: var(--accent-coral);
+  font-weight: 600;
+}
+
 /* ==========================================
    SLIDE 4: Two-col text + chart
    ========================================== */
@@ -560,6 +628,38 @@ h1, h2, h3 {
   margin-bottom: 10px;
 }
 
+.branch-tag {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+  vertical-align: middle;
+}
+
+/* Muted branch — grayed out treatment */
+.tree-branch.is-muted {
+  opacity: 0.45;
+  filter: saturate(0.25);
+}
+
+.tree-branch.is-muted .branch-header {
+  background: var(--text-muted);
+}
+
+.tree-branch.is-muted .branch-body {
+  background: var(--bg-secondary);
+}
+
+.tree-branch.is-muted .bullet-list li::before {
+  background: var(--text-muted);
+}
+
 /* ==========================================
    SLIDE 7: MCP Architecture
    ========================================== */
@@ -614,6 +714,69 @@ h1, h2, h3 {
   width: 100%;
 }
 
+.skill-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.skill-card-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+}
+
+.skill-card-meta {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+}
+
+.skill-bundle-note {
+  margin-top: 14px;
+  text-align: center;
+  font-size: 12px;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.local-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--accent-coral);
+  color: white;
+  vertical-align: middle;
+}
+
+.deploy-target {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.deploy-target-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+}
+
 /* ==========================================
    SLIDE 8: Comparison
    ========================================== */
@@ -638,6 +801,123 @@ h1, h2, h3 {
 .comparison-grid .placeholder-box {
   height: 260px;
   font-size: 18px;
+}
+
+/* ==========================================
+   Deck stack (overlapping slide thumbnails)
+   ========================================== */
+.deck-stack {
+  position: relative;
+  padding: 24px 16px 16px;
+}
+
+.deck-stack-label {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.deck-stack-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.deck-thumb {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-default);
+  background: white;
+  box-shadow: 0 10px 24px rgba(28, 25, 23, 0.10), 0 2px 6px rgba(28, 25, 23, 0.06);
+  transform-origin: center center;
+}
+
+.deck-thumb-0 {
+  z-index: 4;
+  transform: translate(0, 0) rotate(0deg);
+}
+.deck-thumb-1 {
+  z-index: 3;
+  transform: translate(18px, 14px) rotate(2.5deg);
+}
+.deck-thumb-2 {
+  z-index: 2;
+  transform: translate(36px, 28px) rotate(5deg);
+  opacity: 0.85;
+}
+.deck-thumb-3 {
+  z-index: 1;
+  transform: translate(54px, 42px) rotate(7.5deg);
+  opacity: 0.65;
+}
+
+/* ==========================================
+   Before/After screen frames
+   ========================================== */
+.before-after-prompt {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-coral);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 12px 18px;
+  margin-bottom: 18px;
+}
+
+.before-after-prompt-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-coral);
+  margin-bottom: 4px;
+}
+
+.before-after-prompt-text {
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+.screen-frame {
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-card);
+  background: white;
+  aspect-ratio: 16 / 9;
+  filter: saturate(0.7);
+  opacity: 0.85;
+}
+
+.screen-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.screen-frame-elevated {
+  border: 2px solid var(--accent-coral);
+  box-shadow: var(--shadow-elevated), 0 0 0 4px var(--accent-coral-soft);
+  filter: none;
+  opacity: 1;
+}
+
+.screen-caption {
+  margin-top: 10px;
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-muted);
+  text-align: center;
 }
 
 /* ==========================================
@@ -793,6 +1073,96 @@ h1, h2, h3 {
   line-height: 1.55;
   color: var(--text-secondary);
   padding-top: 10px;
+}
+
+.step-text strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* ==========================================
+   Step detail slides (one per process step)
+   ========================================== */
+.step-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 8px;
+}
+
+.step-detail-number {
+  width: 72px;
+  height: 72px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #ff6b5b 0%, #ff8f6b 100%);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 36px;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(255, 107, 91, 0.32);
+}
+
+.step-detail-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-coral);
+  margin-bottom: 4px;
+}
+
+.step-detail-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text-primary);
+  margin-bottom: 0;
+}
+
+.step-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-top: 8px;
+}
+
+.step-detail-col {
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  padding: 20px 22px;
+}
+
+.step-detail-col-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.step-detail-col .bullet-list li {
+  font-size: 14px;
+  margin-bottom: 10px;
+  line-height: 1.5;
+}
+
+.step-detail-col .bullet-list li::before {
+  top: 7px;
+  width: 6px;
+  height: 6px;
+}
+
+.step-detail-col .bullet-list li strong {
+  color: var(--text-primary);
+  font-weight: 600;
 }
 
 /* ==========================================
@@ -1089,7 +1459,7 @@ h1, h2, h3 {
       <div class="founder-card">
         <div class="founder-photo"><img src="eric.jpg" alt="Eric Page"></div>
         <div class="founder-name">Eric Page</div>
-        <div class="founder-companies">Amplify<br>Accounting thing<br>other</div>
+        <div class="founder-companies">Multiply Labs<br>Stride Services<br>Amplify Health</div>
       </div>
       <div class="founders-logo-divider">
         <svg width="72" height="72" viewBox="0 0 200 200">
@@ -1102,7 +1472,7 @@ h1, h2, h3 {
       <div class="founder-card">
         <div class="founder-photo"><img src="chris.jpg" alt="Chris Hogg"></div>
         <div class="founder-name">Chris Hogg</div>
-        <div class="founder-companies">100Plus<br>Propeller<br>Marley</div>
+        <div class="founder-companies">100Plus<br>Propeller Health<br>Marley Medical</div>
       </div>
     </div>
   </div>
@@ -1113,14 +1483,15 @@ h1, h2, h3 {
      ========================================== -->
 <section class="slide slide-dramatic" data-slide="3">
   <div class="slide-inner">
-    <h2 class="dramatic-headline">The world is changing and there are going to be <span class="coral">winners</span> and <span class="coral">losers</span></h2>
-    <div class="dramatic-statements">
-      <div class="dramatic-statement">
-        <p>Your company is not going to get beat by AI (yet).<br><br><strong>But...</strong><br><br>Your company will get beat by a competitor using <span class="highlight">GenAI everyday</span> to improve productivity and iteration speed.</p>
-      </div>
-      <div class="dramatic-statement accent">
-        <p><strong>Speed of learning</strong> is the key factor to success for startups. The effective use of GenAI can make <span class="highlight">almost every process and task faster.</span></p>
-      </div>
+    <h2 class="dramatic-headline" style="margin-bottom: 40px;">The world is changing and there are going to be <span class="coral">winners</span> and <span class="coral">losers</span></h2>
+
+    <div class="dramatic-primary">
+      <div class="dramatic-primary-label">The #1 factor</div>
+      <p class="dramatic-primary-body"><strong>Speed of learning</strong> is the key factor to success for startups — and the effective use of GenAI can make <span class="highlight">almost every process and task faster.</span></p>
+    </div>
+
+    <div class="dramatic-secondary">
+      <p>Your company is not going to get beat by AI (yet). <strong>But</strong> it will get beat by a competitor using <span class="highlight">GenAI everyday</span> to improve productivity and iteration speed.</p>
     </div>
   </div>
 </section>
@@ -1153,9 +1524,9 @@ h1, h2, h3 {
      ========================================== -->
 <section class="slide" data-slide="5">
   <div class="slide-inner">
-    <h2 class="slide-headline" style="text-align: center; margin-bottom: 32px;">The early adopter companies are using GenAI daily, for multiple different tasks and use cases</h2>
+    <h2 class="slide-headline" style="text-align: center; margin-bottom: 32px;">The early adopter companies are just beginning to use GenAI daily, but are not optimizing their AI output</h2>
     <div class="tree-diagram">
-      <div class="tree-root">Enterprise Claude</div>
+      <div class="tree-root">Claude Enterprise</div>
       <div class="tree-connectors">
         <svg viewBox="0 0 600 36" style="width: 100%; height: 36px; display: block;">
           <line x1="300" y1="0" x2="100" y2="32" stroke="var(--accent-coral)" stroke-width="1.5" opacity="0.4"/>
@@ -1168,29 +1539,30 @@ h1, h2, h3 {
       </div>
       <div class="tree-branches">
         <div class="tree-branch">
-          <div class="branch-header">Chat</div>
+          <div class="branch-header">Chat <span class="branch-tag">Basic</span></div>
           <div class="branch-body">
             <ul class="bullet-list">
               <li>Simple and fast questions</li>
-              <li>Research</li>
-              <li>Brainstorming</li>
+              <li>Research &amp; brainstorming</li>
               <li>Simple writing</li>
+              <li>Multi-step projects</li>
+              <li>Deep analyses &amp; reports</li>
+              <li>Creating documents &amp; decks</li>
             </ul>
           </div>
         </div>
-        <div class="tree-branch">
-          <div class="branch-header">CoWork</div>
+        <div class="tree-branch is-muted">
+          <div class="branch-header">Chat <span class="branch-tag">Optimized</span></div>
           <div class="branch-body">
             <ul class="bullet-list">
-              <li>Multi-step projects</li>
-              <li>Deep analyses/reports</li>
-              <li>Writing documents</li>
-              <li>Creating decks</li>
-              <li>Creating models</li>
+              <li>Claude that knows your company</li>
+              <li>Consistent brand and voice</li>
+              <li>Outputs that include company context</li>
+              <li>10x outputs</li>
             </ul>
           </div>
         </div>
-        <div class="tree-branch">
+        <div class="tree-branch is-muted">
           <div class="branch-header">Code</div>
           <div class="branch-body">
             <ul class="bullet-list">
@@ -1211,36 +1583,42 @@ h1, h2, h3 {
 <section class="slide" data-slide="6">
   <div class="slide-panel">
     <h2 class="slide-headline" style="margin-bottom: 28px;">The content these companies create is fast, efficient and high quality, but is generic and looks and sounds like an AI product</h2>
-    <div class="two-col" style="align-items: center;">
+    <div class="two-col" style="align-items: center; grid-template-columns: 1fr 1.1fr;">
       <div>
         <ul class="bullet-list">
           <li>Lacks distinctive company (or personal) voice</li>
           <li>Lacks specific understanding and knowledge of the company</li>
-          <li>Lacks visual design principles to create on brand work product</li>
-          <li>Lacks understanding of the mission, vision, ethos and distincitveness of your company</li>
+          <li>Lacks visual design principles to create on-brand work product</li>
+          <li>Lacks understanding of the mission, vision and ethos that make your company distinctive</li>
           <li>Lacks access to tools and internal data</li>
         </ul>
       </div>
-      <div class="placeholder-box" style="height: 280px;">
-        Generic Deck
+      <div class="deck-stack">
+        <div class="deck-stack-label">Output from a generic AI pitch-deck prompt</div>
+        <div class="deck-stack-wrap">
+          <img class="deck-thumb deck-thumb-3" src="img/cardio-06-team.png" alt="Generic AI deck slide — team grid">
+          <img class="deck-thumb deck-thumb-2" src="img/cardio-04-solution.png" alt="Generic AI deck slide — solution overview">
+          <img class="deck-thumb deck-thumb-1" src="img/cardio-02-stats.png" alt="Generic AI deck slide — stats">
+          <img class="deck-thumb deck-thumb-0" src="img/cardio-01-title.png" alt="Generic AI deck slide — title">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ==========================================
-     SLIDE 7: MCP Server Architecture
+     SLIDE 7: Local Skills Architecture
      ========================================== -->
 <section class="slide" data-slide="7" style="background: white;">
   <div class="slide-inner">
-    <h2 class="slide-headline" style="font-size: 30px;">But the leading edge companies are learning how to personalize their AI tools and optimize them for their specific company and use cases</h2>
-    <p class="slide-subhead" style="margin-bottom: 20px;">Imagine a process that allows your GenAI instance to access all information about your company and know your history, best practices, voice, style and even company principles</p>
+    <h2 class="slide-headline" style="font-size: 28px; margin-bottom: 8px;">But the leading-edge companies are personalizing their AI — bundling their knowledge, voice and brand into reusable Skills</h2>
+    <p class="slide-subhead" style="margin-bottom: 18px;">Skills are self-contained packages (knowledge, principles, prompts, brand assets) that we build and iterate inside your Claude Code, then deploy directly into your Claude Chat. <strong style="color: var(--text-primary);">Everything stays local — no MCP server, no external infrastructure.</strong></p>
     <div class="mcp-diagram">
       <div class="mcp-inputs">
         <div class="node" style="background: var(--bg-secondary); border: 1px solid var(--border-default); box-shadow: var(--shadow-card);">Company Documents</div>
-        <div class="node" style="background: var(--bg-secondary); border: 1px solid var(--border-default); box-shadow: var(--shadow-card);">Company Processes and Workflows</div>
+        <div class="node" style="background: var(--bg-secondary); border: 1px solid var(--border-default); box-shadow: var(--shadow-card);">Processes &amp; Workflows</div>
         <div class="node" style="background: var(--bg-secondary); border: 1px solid var(--border-default); box-shadow: var(--shadow-card);">Employee Knowledge</div>
-        <div class="node" style="background: var(--bg-secondary); border: 1px solid var(--border-default); box-shadow: var(--shadow-card);">Company Data</div>
+        <div class="node" style="background: var(--bg-secondary); border: 1px solid var(--border-default); box-shadow: var(--shadow-card);">Brand Assets &amp; Data</div>
       </div>
       <div class="mcp-arrows-row">
         <div class="arrow-down"><svg viewBox="0 0 20 24" fill="none"><path d="M10 0 L10 16 M5 12 L10 22 L15 12" stroke="#ff6b5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
@@ -1249,40 +1627,63 @@ h1, h2, h3 {
         <div class="arrow-down"><svg viewBox="0 0 20 24" fill="none"><path d="M10 0 L10 16 M5 12 L10 22 L15 12" stroke="#ff6b5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
       </div>
       <div class="group-container mcp-server" style="border-color: var(--accent-coral); border-width: 2px; background: var(--accent-coral-soft);">
-        <span class="group-label" style="background: white;">MCP Server</span>
-        <div class="mcp-server-inner">
-          <div class="node" style="background: white; box-shadow: var(--shadow-card);">Company KnowledgeBase</div>
-          <div class="node" style="background: white; box-shadow: var(--shadow-card);">Company Principles</div>
-          <div class="node" style="background: white; box-shadow: var(--shadow-card);">Skills and Workflows</div>
-          <div class="node" style="background: white; box-shadow: var(--shadow-card);">Tools and Agents</div>
+        <span class="group-label" style="background: white;">EPCH builds Skills in your Claude Code <span class="local-badge">100% local</span></span>
+        <div class="mcp-server-inner" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="skill-card">
+            <div class="skill-card-title">Pitch Deck Skill</div>
+            <div class="skill-card-meta">Includes: brand assets, past decks, voice rules</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title">Briefing Memo Skill</div>
+            <div class="skill-card-meta">Includes: templates, principles, KB excerpts</div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-card-title">Contract Review Skill</div>
+            <div class="skill-card-meta">Includes: redlines, priorities, term library</div>
+          </div>
         </div>
+        <div class="skill-bundle-note">Each Skill is a self-contained bundle — files, prompts and assets travel together.</div>
       </div>
       <div class="mcp-output-arrow">
         <svg viewBox="0 0 20 28" width="22" height="26" fill="none"><path d="M10 0 L10 18 M5 14 L10 24 L15 14" stroke="#ff6b5b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
       </div>
-      <div class="tree-root mcp-output" style="max-width: 100%;">Enterprise Claude</div>
+      <div class="deploy-target">
+        <div class="deploy-target-label">Deployed locally into</div>
+        <div class="tree-root mcp-output" style="max-width: 100%;">Your Claude Chat</div>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- ==========================================
-     SLIDE 8: 10x Results
+     SLIDE 8: 10x Results — Before/After
      ========================================== -->
 <section class="slide" data-slide="8">
   <div class="slide-inner">
-    <h2 class="slide-headline">Personalizing and optimizing Claude Enterprise leads to 10x better results for the same effort and input.</h2>
-    <p class="slide-subhead">Claude will access an MCP server for each user at startup, leveraging this company-specific information for each prompt, task or project.</p>
+    <h2 class="slide-headline" style="margin-bottom: 6px;">Personalizing Claude with local Skills produces 10x better output from the same prompt</h2>
+    <p class="slide-subhead" style="margin-bottom: 18px;">Same employee, same ask — but with company-specific Skills loaded into Claude Chat, the output knows your brand, voice and context.</p>
+
+    <div class="before-after-prompt">
+      <div class="before-after-prompt-label">Prompt</div>
+      <div class="before-after-prompt-text">"Create a pitch deck for our partnership program targeting a major MA payer."</div>
+    </div>
+
     <div class="comparison-grid">
       <div>
-        <div class="comparison-label muted">Before</div>
-        <div class="placeholder-box" style="height: 260px;">Generic Deck</div>
+        <div class="comparison-label muted">Before — generic Claude Chat</div>
+        <div class="screen-frame">
+          <img src="img/cardio-01-title.png" alt="Generic AI-generated deck — title slide">
+        </div>
+        <div class="screen-caption">Generic visual identity. No brand. No voice. Looks AI-made.</div>
       </div>
       <div>
-        <div class="comparison-label coral">After</div>
-        <div class="placeholder-box elevated" style="height: 260px;">Personalized Deck</div>
+        <div class="comparison-label coral">After — Skills loaded</div>
+        <div class="screen-frame screen-frame-elevated">
+          <img src="img/marley-01-title.png" alt="Personalized deck — title slide on brand">
+        </div>
+        <div class="screen-caption">On-brand colors, typography, logo. Reads like the company wrote it.</div>
       </div>
     </div>
-    <p style="margin-top: 16px; font-size: 13px; color: var(--text-muted);">Specific prompt used: "xxxxxx"</p>
   </div>
 </section>
 
@@ -1388,32 +1789,218 @@ h1, h2, h3 {
 </section>
 
 <!-- ==========================================
-     SLIDE 10: Our Goal / 4 Steps
+     SLIDE 10: Process Summary — 5 Steps
      ========================================== -->
 <section class="slide" data-slide="10">
   <div class="slide-panel">
-    <h2 class="slide-headline">Our goal is to 10x the value you are getting from GenAI in the workplace</h2>
-    <p class="slide-subhead">We will ingest data and documents from [Company] for the initial deployment, but we will continue to iterate and optimize the KnowledgeBase and Skills libraries to incorporate learnings from use.</p>
+    <h2 class="slide-headline">Our 5-step process to 10x the value you get from Claude</h2>
+    <p class="slide-subhead">Everything runs locally — we build and iterate Skills in your Claude Code, then deploy them into your Claude Chat. After the test period we keep learning and expanding the Skills library.</p>
     <div class="steps-with-loop">
-      <svg class="loop-arrow-svg" viewBox="0 0 48 290" fill="none">
-        <path d="M40 18 C-12 18, -12 272, 40 272" stroke="var(--accent-coral)" stroke-width="2.5" fill="none"/>
+      <svg class="loop-arrow-svg" viewBox="0 0 48 360" fill="none" preserveAspectRatio="none">
+        <path d="M40 18 C-12 18, -12 342, 40 342" stroke="var(--accent-coral)" stroke-width="2.5" fill="none"/>
         <polygon points="36,8 40,22 44,10" fill="var(--accent-coral)"/>
       </svg>
       <div class="step-row">
         <div class="step-number">1</div>
-        <div class="step-text">Collect, ingest and distill company information (documents, workflows, interviews, etc) into foundation documents and KB</div>
+        <div class="step-text"><strong>Exec workshop —</strong> meet with the leadership team to walk through the process and define the initial use cases that matter most</div>
       </div>
       <div class="step-row">
         <div class="step-number">2</div>
-        <div class="step-text">Create custom MCP server with KB, Foundation Docs, Skills</div>
+        <div class="step-text"><strong>Collect documents —</strong> gather the source material for each use case: past work product, brand assets, templates, principles, knowledge</div>
       </div>
       <div class="step-row">
         <div class="step-number">3</div>
-        <div class="step-text">Setup company's Enterprise Claude instance with acces to MCP server</div>
+        <div class="step-text"><strong>Build Skills —</strong> in your Claude Code, we process the documents and assemble self-contained Skills (assets, prompts, examples all bundled together)</div>
       </div>
       <div class="step-row">
         <div class="step-number">4</div>
-        <div class="step-text">Monitor usage and best practices, distill learnings and use to expand the KnowledgeBase and to iterate and expand the skill library</div>
+        <div class="step-text"><strong>Deploy Skills —</strong> install the Skills directly into your Claude Chat. No server, no MCP, no external dependencies</div>
+      </div>
+      <div class="step-row">
+        <div class="step-number">5</div>
+        <div class="step-text"><strong>Test &amp; iterate —</strong> structured trial period with the team — gather feedback, refine the Skills, lock in what works before broader rollout</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SLIDE 10a: Step 1 — Exec Workshop
+     ========================================== -->
+<section class="slide" data-slide="10a">
+  <div class="slide-panel">
+    <div class="step-detail-header">
+      <div class="step-detail-number">1</div>
+      <div>
+        <div class="step-detail-label">Step 1 of 5</div>
+        <h2 class="step-detail-title">Exec workshop — set direction and pick the right use cases</h2>
+      </div>
+    </div>
+    <p class="slide-subhead" style="margin-bottom: 24px;">We start with a working session with your leadership team. The goal is alignment on how Skills will work, what's in scope, and which use cases to ship first.</p>
+    <div class="step-detail-grid">
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">What we do together</div>
+        <ul class="bullet-list">
+          <li>Walk leadership through the local-Skills model and what's possible</li>
+          <li>Map current workflows where Claude can save the most time</li>
+          <li>Identify 3–5 initial use cases (pitch decks, briefing memos, etc.)</li>
+          <li>Define success criteria and who will be in the test cohort</li>
+        </ul>
+      </div>
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">What you walk away with</div>
+        <ul class="bullet-list">
+          <li>Prioritized list of initial Skills to build</li>
+          <li>Owner assigned for each use case</li>
+          <li>Document inventory list — what we'll need from you in Step 2</li>
+          <li>Test cohort defined (typically the leadership team + key power users)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SLIDE 10b: Step 2 — Collect Documents
+     ========================================== -->
+<section class="slide" data-slide="10b">
+  <div class="slide-panel">
+    <div class="step-detail-header">
+      <div class="step-detail-number">2</div>
+      <div>
+        <div class="step-detail-label">Step 2 of 5</div>
+        <h2 class="step-detail-title">Collect documents — gather the raw material for each Skill</h2>
+      </div>
+    </div>
+    <p class="slide-subhead" style="margin-bottom: 24px;">For each use case identified in Step 1, we collect the source material that defines how your company already does that work. This is the input that makes each Skill specific to you.</p>
+    <div class="step-detail-grid">
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">What we collect</div>
+        <ul class="bullet-list">
+          <li>Past work product (decks, memos, contracts, reports)</li>
+          <li>Brand assets — logos, color palettes, typography, templates</li>
+          <li>Voice &amp; style references — tone guides, examples of good work</li>
+          <li>Knowledge base — company principles, mission, key strategy docs</li>
+          <li>Targeted interviews with subject-matter experts where needed</li>
+        </ul>
+      </div>
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">How we handle it</div>
+        <ul class="bullet-list">
+          <li><strong>Everything stays local</strong> — files transferred directly, never to a third-party server</li>
+          <li>BAA available where regulated data is involved</li>
+          <li>Clear inventory of what was shared, where it lives, who has access</li>
+          <li>We work with your IT/security team if you have one</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SLIDE 10c: Step 3 — Build Skills
+     ========================================== -->
+<section class="slide" data-slide="10c">
+  <div class="slide-panel">
+    <div class="step-detail-header">
+      <div class="step-detail-number">3</div>
+      <div>
+        <div class="step-detail-label">Step 3 of 5</div>
+        <h2 class="step-detail-title">Build Skills — in your Claude Code, locally</h2>
+      </div>
+    </div>
+    <p class="slide-subhead" style="margin-bottom: 20px;">We work inside your Claude Code instance to turn your documents into Skills. Each Skill is a single self-contained bundle — knowledge, prompts, examples and the actual brand asset files all travel together.</p>
+    <div class="step-detail-grid">
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">What's inside a Skill</div>
+        <ul class="bullet-list">
+          <li>System prompt — voice, style, guardrails</li>
+          <li>Knowledge — relevant context distilled from your docs</li>
+          <li>Examples — past work product that exemplifies the standard</li>
+          <li>Brand assets — logos, palettes, fonts, layout templates</li>
+          <li>Worked recipes — how to handle common variations</li>
+        </ul>
+      </div>
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">How we work</div>
+        <ul class="bullet-list">
+          <li>Iterative — build, test against real prompts, refine</li>
+          <li>EPCH does the heavy lift; you review and validate output quality</li>
+          <li>Each Skill is independently testable and shippable</li>
+          <li>No external dependencies — Skills run wherever Chat runs</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SLIDE 10d: Step 4 — Deploy Skills
+     ========================================== -->
+<section class="slide" data-slide="10d">
+  <div class="slide-panel">
+    <div class="step-detail-header">
+      <div class="step-detail-number">4</div>
+      <div>
+        <div class="step-detail-label">Step 4 of 5</div>
+        <h2 class="step-detail-title">Deploy Skills — directly into your Claude Chat</h2>
+      </div>
+    </div>
+    <p class="slide-subhead" style="margin-bottom: 24px;">Skills install directly into your Claude Chat as native files. No server to stand up, no MCP integration, no GitHub repo, no third-party hosting. Your team invokes a Skill the same way they'd start any chat.</p>
+    <div class="step-detail-grid">
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">How deployment works</div>
+        <ul class="bullet-list">
+          <li>Skills delivered as a folder of files</li>
+          <li>Loaded into Claude Chat for each user in the test cohort</li>
+          <li>Versioned — every update is a new bundle, easy to roll back</li>
+          <li>Documentation included for each Skill (what it does, how to invoke)</li>
+        </ul>
+      </div>
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">Why local matters</div>
+        <ul class="bullet-list">
+          <li>No company data leaves your environment for a third party</li>
+          <li>No infrastructure to maintain or pay for</li>
+          <li>No vendor lock-in — Skills are your files</li>
+          <li>Works wherever your Claude Chat works</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SLIDE 10e: Step 5 — Test & Iterate
+     ========================================== -->
+<section class="slide" data-slide="10e">
+  <div class="slide-panel">
+    <div class="step-detail-header">
+      <div class="step-detail-number">5</div>
+      <div>
+        <div class="step-detail-label">Step 5 of 5</div>
+        <h2 class="step-detail-title">Test &amp; iterate — prove value before broader rollout</h2>
+      </div>
+    </div>
+    <p class="slide-subhead" style="margin-bottom: 24px;">A structured 2–4 week trial period with the cohort defined in Step 1. We watch real usage, gather feedback, and refine each Skill until output quality is consistently great — then we open it up to the rest of the company.</p>
+    <div class="step-detail-grid">
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">What happens during the trial</div>
+        <ul class="bullet-list">
+          <li>Cohort uses the Skills on real work, not test prompts</li>
+          <li>Weekly checkins — what's working, what's not, what's missing</li>
+          <li>Rapid iteration — Skills get tightened up week by week</li>
+          <li>Quality bar: output good enough that the user ships it with minimal editing</li>
+        </ul>
+      </div>
+      <div class="step-detail-col">
+        <div class="step-detail-col-label">What comes next</div>
+        <ul class="bullet-list">
+          <li>Workshop to review wins, gaps and next priorities</li>
+          <li>Broader rollout to the rest of the company</li>
+          <li>Training sessions and documentation for new users</li>
+          <li>Quarterly check-ins to expand the Skills library based on usage</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -1546,27 +2133,28 @@ h1, h2, h3 {
      ========================================== -->
 <section class="slide" data-slide="12">
   <div class="slide-inner">
-    <h2 class="slide-headline">Process and timelines for implementation</h2>
-    <p class="slide-subhead" style="margin-bottom: 24px;">We typically get customers live in ~4 weeks, and then do weekly checkins until we are all happy with the implementation. Following the implentation phase, we will have QBRs with recommended improvements every 3 months.</p>
+    <h2 class="slide-headline">Implementation timeline — typically ~4 weeks to first deployment</h2>
+    <p class="slide-subhead" style="margin-bottom: 24px;">We get the leadership cohort live in about 4 weeks, run a structured test period, then open Skills up to the rest of the company. After launch we do QBRs every 3 months to expand the Skills library based on real usage.</p>
     <div class="timeline-phases">
       <div class="phase-column">
-        <div class="phase-header"><span class="phase-number">1</span>Data Collection</div>
+        <div class="phase-header"><span class="phase-number">1</span>Discovery</div>
         <div class="phase-body">
           <ul class="bullet-list bullet-list-sm">
-            <li>Interviews with key Leadership Team</li>
-            <li>2 hour workshop with Leadership Team</li>
-            <li>Document collection</li>
-            <li>Targeted survey to LT, managers or whole company (on use cases)</li>
+            <li>2-hour workshop with the leadership team</li>
+            <li>Interviews with use-case owners</li>
+            <li>Document collection list finalized</li>
+            <li>Initial Skills and test cohort defined</li>
           </ul>
         </div>
       </div>
       <div class="phase-column">
-        <div class="phase-header"><span class="phase-number">2</span>MCP Server Development</div>
+        <div class="phase-header"><span class="phase-number">2</span>Skills Development</div>
         <div class="phase-body">
           <ul class="bullet-list bullet-list-sm">
-            <li>EPCH process all information from interviews, surveys and documents</li>
-            <li>All data processed under BAA (if necessary)</li>
-            <li>Review foundation documents with LT (KB structure, mission, vision, voice, principles)</li>
+            <li>EPCH builds Skills locally in your Claude Code</li>
+            <li>All data stays inside your environment (BAA available)</li>
+            <li>Each Skill bundled with knowledge, prompts, brand assets</li>
+            <li>Review of voice, principles and quality bar with leadership</li>
           </ul>
         </div>
       </div>
@@ -1574,9 +2162,10 @@ h1, h2, h3 {
         <div class="phase-header"><span class="phase-number">3</span>Soft Launch</div>
         <div class="phase-body">
           <ul class="bullet-list bullet-list-sm">
-            <li>Deploy MCP server to Leadership Team Claude instances</li>
-            <li>Frequent checkins and feedback</li>
-            <li>2 hour workshop post trial period with pros/cons and updates desired</li>
+            <li>Skills deployed into Claude Chat for the test cohort</li>
+            <li>Weekly checkins and rapid Skill iteration</li>
+            <li>Output-quality review against real work</li>
+            <li>Workshop post-trial — wins, gaps, next priorities</li>
           </ul>
         </div>
       </div>
@@ -1584,10 +2173,10 @@ h1, h2, h3 {
         <div class="phase-header"><span class="phase-number">4</span>Company Launch</div>
         <div class="phase-body">
           <ul class="bullet-list bullet-list-sm">
-            <li>EPCH will enable the MCP server to all employees</li>
-            <li>EPCH will conduct training sessions (as desired)</li>
-            <li>EPCH will distribute documentation and video support for use</li>
-            <li>EPCH will deploy a 24/7 customer support rep for [company] (AI of course)</li>
+            <li>Skills deployed to all employees' Claude Chat</li>
+            <li>EPCH-led training sessions (as desired)</li>
+            <li>Documentation and video walkthroughs for each Skill</li>
+            <li>Quarterly check-ins to expand the Skills library</li>
           </ul>
         </div>
       </div>
