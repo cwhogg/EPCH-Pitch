@@ -1529,6 +1529,103 @@ h1, h2, h3 {
   margin-top: 2px;
 }
 
+/* ==========================================
+   Real-deck embed slide (Marley Humana output)
+   ========================================== */
+.real-deck-prompt {
+  background: var(--bg-secondary);
+  border-left: 3px solid var(--accent-coral);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 12px 18px;
+  margin-bottom: 14px;
+}
+
+.real-deck-prompt-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-coral);
+  margin-bottom: 4px;
+}
+
+.real-deck-prompt-text {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.5;
+}
+
+.real-deck-prompt-text strong {
+  color: var(--accent-coral);
+  font-style: normal;
+  font-weight: 600;
+}
+
+.real-deck-meta {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 14px;
+}
+
+.real-deck-meta-item {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.real-deck-meta-num {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 20px;
+  color: var(--accent-coral);
+  line-height: 1;
+}
+
+.real-deck-meta-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: 0.04em;
+}
+
+.real-deck-meta-cta {
+  margin-left: auto;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent-coral);
+  text-decoration: none;
+  padding: 6px 12px;
+  border: 1px solid var(--accent-coral);
+  border-radius: 999px;
+  transition: background 0.2s;
+}
+
+.real-deck-meta-cta:hover {
+  background: var(--accent-coral-soft);
+}
+
+.real-deck-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  width: 100%;
+}
+
+.real-deck-grid img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.06);
+  background: white;
+  display: block;
+}
+
 /* Negative pill — for "no MCP / no server" style call-outs */
 .step-pill-neg {
   background: transparent;
@@ -2298,6 +2395,63 @@ h1, h2, h3 {
         </div>
         <div class="screen-caption">On-brand colors, typography, layouts on every slide. Reads like the company wrote it.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SLIDE 9: Marley Humana Deck — full output
+     ========================================== -->
+<section class="slide" data-slide="9">
+  <div class="slide-inner">
+    <h2 class="slide-headline" style="font-size: 28px; margin-bottom: 8px;">We trained a <span style="font-family: var(--font-body); font-weight: 600; color: var(--accent-coral);">payer-deck-creation</span> Skill on Marley Medical payer decks — and got mind-blowing results</h2>
+
+    <div class="real-deck-prompt">
+      <div class="real-deck-prompt-label">The prompt</div>
+      <div class="real-deck-prompt-text">"Create a payer pitch deck for Humana focusing on their Medicare Advantage population. They are primarily interested in <strong>HCC coding</strong> and finding new diagnoses that have been missed or diagnoses with the incorrect severity (too low). They are secondarily interested in <strong>HEDIS measures</strong> and then <strong>reduction in inpatient utilization</strong> from better care and disease control."</div>
+    </div>
+
+    <div class="real-deck-meta">
+      <div class="real-deck-meta-item"><span class="real-deck-meta-num">33</span><span class="real-deck-meta-label">slides generated</span></div>
+      <div class="real-deck-meta-item"><span class="real-deck-meta-num">1</span><span class="real-deck-meta-label">prompt</span></div>
+      <div class="real-deck-meta-item"><span class="real-deck-meta-num">100%</span><span class="real-deck-meta-label">on-brand</span></div>
+      <a class="real-deck-meta-cta" href="Marley_Humana_MA_Pitch_v2_May2026.pdf" target="_blank" rel="noopener">Open full PDF →</a>
+    </div>
+
+    <div class="real-deck-grid">
+      <img src="img/marley-deck/page-01.png" alt="Marley Humana deck slide 1">
+      <img src="img/marley-deck/page-02.png" alt="slide 2">
+      <img src="img/marley-deck/page-03.png" alt="slide 3">
+      <img src="img/marley-deck/page-04.png" alt="slide 4">
+      <img src="img/marley-deck/page-05.png" alt="slide 5">
+      <img src="img/marley-deck/page-06.png" alt="slide 6">
+      <img src="img/marley-deck/page-07.png" alt="slide 7">
+      <img src="img/marley-deck/page-08.png" alt="slide 8">
+      <img src="img/marley-deck/page-09.png" alt="slide 9">
+      <img src="img/marley-deck/page-10.png" alt="slide 10">
+      <img src="img/marley-deck/page-11.png" alt="slide 11">
+      <img src="img/marley-deck/page-12.png" alt="slide 12">
+      <img src="img/marley-deck/page-13.png" alt="slide 13">
+      <img src="img/marley-deck/page-14.png" alt="slide 14">
+      <img src="img/marley-deck/page-15.png" alt="slide 15">
+      <img src="img/marley-deck/page-16.png" alt="slide 16">
+      <img src="img/marley-deck/page-17.png" alt="slide 17">
+      <img src="img/marley-deck/page-18.png" alt="slide 18">
+      <img src="img/marley-deck/page-19.png" alt="slide 19">
+      <img src="img/marley-deck/page-20.png" alt="slide 20">
+      <img src="img/marley-deck/page-21.png" alt="slide 21">
+      <img src="img/marley-deck/page-22.png" alt="slide 22">
+      <img src="img/marley-deck/page-23.png" alt="slide 23">
+      <img src="img/marley-deck/page-24.png" alt="slide 24">
+      <img src="img/marley-deck/page-25.png" alt="slide 25">
+      <img src="img/marley-deck/page-26.png" alt="slide 26">
+      <img src="img/marley-deck/page-27.png" alt="slide 27">
+      <img src="img/marley-deck/page-28.png" alt="slide 28">
+      <img src="img/marley-deck/page-29.png" alt="slide 29">
+      <img src="img/marley-deck/page-30.png" alt="slide 30">
+      <img src="img/marley-deck/page-31.png" alt="slide 31">
+      <img src="img/marley-deck/page-32.png" alt="slide 32">
+      <img src="img/marley-deck/page-33.png" alt="slide 33">
     </div>
   </div>
 </section>
