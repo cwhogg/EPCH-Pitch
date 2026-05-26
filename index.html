@@ -1403,6 +1403,100 @@ h1, h2, h3 {
 }
 
 /* ==========================================
+   Visual step slides
+   ========================================== */
+.step-lead {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  margin: 6px 0 22px 0;
+  max-width: 760px;
+}
+
+.step-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  margin-bottom: 22px;
+}
+
+.step-hero-svg {
+  width: 100%;
+  max-width: 720px;
+  height: auto;
+}
+
+.step-pills {
+  display: grid;
+  gap: 12px;
+}
+
+.step-pills-3 { grid-template-columns: repeat(3, 1fr); }
+.step-pills-4 { grid-template-columns: repeat(4, 1fr); }
+.step-pills-5 { grid-template-columns: repeat(5, 1fr); }
+
+.step-pill {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+}
+
+.step-pill-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: var(--accent-coral-soft);
+  color: var(--accent-coral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.step-pill-icon svg { width: 18px; height: 18px; }
+
+.step-pill-text {
+  font-size: 13px;
+  line-height: 1.35;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.step-pill-text small {
+  display: block;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Negative pill — for "no MCP / no server" style call-outs */
+.step-pill-neg {
+  background: transparent;
+  border-style: dashed;
+  border-color: var(--border-default);
+  opacity: 0.7;
+}
+
+.step-pill-neg .step-pill-icon {
+  background: rgba(28, 25, 23, 0.06);
+  color: var(--text-muted);
+}
+
+.step-pill-neg .step-pill-text {
+  color: var(--text-muted);
+  text-decoration: line-through;
+  text-decoration-color: rgba(28, 25, 23, 0.25);
+}
+
+/* ==========================================
    SLIDE 11: Mock Dashboard
    ========================================== */
 .dashboard-mock {
@@ -2168,28 +2262,78 @@ h1, h2, h3 {
       <div class="step-detail-number">1</div>
       <div>
         <div class="step-detail-label">Step 1 of 5</div>
-        <h2 class="step-detail-title">Exec workshop — set direction and pick the right use cases</h2>
+        <h2 class="step-detail-title">Exec workshop — pick the right use cases</h2>
       </div>
     </div>
-    <p class="slide-subhead" style="margin-bottom: 24px;">We start with a working session with your leadership team. The goal is alignment on how Skills will work, what's in scope, and which use cases to ship first.</p>
-    <div class="step-detail-grid">
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">What we do together</div>
-        <ul class="bullet-list">
-          <li>Walk leadership through the local-Skills model and what's possible</li>
-          <li>Map current workflows where Claude can save the most time</li>
-          <li>Identify 3–5 initial use cases (pitch decks, briefing memos, etc.)</li>
-          <li>Define success criteria and who will be in the test cohort</li>
-        </ul>
+    <p class="step-lead">A working session with leadership: from many possible workflows to 3–5 to ship first.</p>
+
+    <div class="step-hero">
+      <svg class="step-hero-svg" viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- candidate ideas (top row, grey) -->
+        <g opacity="0.55">
+          <rect x="20"  y="14" width="92" height="36" rx="8" fill="#F3F2EF" stroke="#D6D3D1"/>
+          <text x="66"  y="36" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Email drafts</text>
+          <rect x="124" y="14" width="92" height="36" rx="8" fill="#F3F2EF" stroke="#D6D3D1"/>
+          <text x="170" y="36" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">QBR prep</text>
+          <rect x="228" y="14" width="92" height="36" rx="8" fill="#F3F2EF" stroke="#D6D3D1"/>
+          <text x="274" y="36" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Board memos</text>
+          <rect x="332" y="14" width="92" height="36" rx="8" fill="#F3F2EF" stroke="#D6D3D1"/>
+          <text x="378" y="36" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Market analysis</text>
+          <rect x="436" y="14" width="92" height="36" rx="8" fill="#F3F2EF" stroke="#D6D3D1"/>
+          <text x="482" y="36" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Customer notes</text>
+          <rect x="540" y="14" width="92" height="36" rx="8" fill="#F3F2EF" stroke="#D6D3D1"/>
+          <text x="586" y="36" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">RFP drafts</text>
+        </g>
+
+        <!-- converging lines -->
+        <g stroke="#FF6B5B" stroke-width="1.4" opacity="0.55" fill="none">
+          <path d="M66 54 C 66 90, 150 110, 150 138" stroke-dasharray="3 3"/>
+          <path d="M170 54 C 170 90, 200 110, 220 138"/>
+          <path d="M274 54 C 274 90, 320 110, 330 138" stroke-dasharray="3 3"/>
+          <path d="M378 54 C 378 100, 370 110, 365 138"/>
+          <path d="M482 54 C 482 100, 470 110, 470 138" stroke-dasharray="3 3"/>
+          <path d="M586 54 C 586 90, 560 110, 540 138"/>
+        </g>
+
+        <!-- selected use cases (bottom row, coral) -->
+        <g>
+          <rect x="80"  y="138" width="170" height="76" rx="12" fill="#FFF5F3" stroke="#FF6B5B" stroke-width="2"/>
+          <text x="165" y="166" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#1C1917">Pitch decks</text>
+          <text x="165" y="186" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Owner: Sales lead</text>
+          <circle cx="240" cy="148" r="9" fill="#FF6B5B"/>
+          <path d="M236 148 l3 3 l5 -5" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <rect x="275" y="138" width="170" height="76" rx="12" fill="#FFF5F3" stroke="#FF6B5B" stroke-width="2"/>
+          <text x="360" y="166" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#1C1917">Briefing memos</text>
+          <text x="360" y="186" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Owner: Chief of Staff</text>
+          <circle cx="435" cy="148" r="9" fill="#FF6B5B"/>
+          <path d="M431 148 l3 3 l5 -5" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+          <rect x="470" y="138" width="170" height="76" rx="12" fill="#FFF5F3" stroke="#FF6B5B" stroke-width="2"/>
+          <text x="555" y="166" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="#1C1917">Contract review</text>
+          <text x="555" y="186" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Owner: GC</text>
+          <circle cx="630" cy="148" r="9" fill="#FF6B5B"/>
+          <path d="M626 148 l3 3 l5 -5" stroke="white" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="step-pills step-pills-4">
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg></div>
+        <div class="step-pill-text">3–5 use cases<small>prioritized</small></div>
       </div>
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">What you walk away with</div>
-        <ul class="bullet-list">
-          <li>Prioritized list of initial Skills to build</li>
-          <li>Owner assigned for each use case</li>
-          <li>Document inventory list — what we'll need from you in Step 2</li>
-          <li>Test cohort defined (typically the leadership team + key power users)</li>
-        </ul>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Owner assigned<small>per use case</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="3" width="14" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M9 8h6M9 12h6M9 16h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Doc inventory<small>for Step 2</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="8" cy="9" r="3" stroke="currentColor" stroke-width="1.8"/><circle cx="16" cy="9" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M2 19c1-3 3.5-4 6-4s5 1 6 4M14 19c1-2 2.5-3 4-3s3 1 4 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Test cohort<small>leadership + power users</small></div>
       </div>
     </div>
   </div>
@@ -2204,29 +2348,99 @@ h1, h2, h3 {
       <div class="step-detail-number">2</div>
       <div>
         <div class="step-detail-label">Step 2 of 5</div>
-        <h2 class="step-detail-title">Collect documents — gather the raw material for each Skill</h2>
+        <h2 class="step-detail-title">Collect documents — the raw material per Skill</h2>
       </div>
     </div>
-    <p class="slide-subhead" style="margin-bottom: 24px;">For each use case identified in Step 1, we collect the source material that defines how your company already does that work. This is the input that makes each Skill specific to you.</p>
-    <div class="step-detail-grid">
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">What we collect</div>
-        <ul class="bullet-list">
-          <li>Past work product (decks, memos, contracts, reports)</li>
-          <li>Brand assets — logos, color palettes, typography, templates</li>
-          <li>Voice &amp; style references — tone guides, examples of good work</li>
-          <li>Knowledge base — company principles, mission, key strategy docs</li>
-          <li>Targeted interviews with subject-matter experts where needed</li>
-        </ul>
+    <p class="step-lead">Four streams of source material flow into one local Skill workspace. Nothing leaves your environment.</p>
+
+    <div class="step-hero">
+      <svg class="step-hero-svg" viewBox="0 0 720 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Four document streams -->
+        <g>
+          <!-- Past work -->
+          <g transform="translate(40, 10)">
+            <rect x="6" y="8" width="60" height="76" rx="6" fill="white" stroke="#D6D3D1" stroke-width="1.2"/>
+            <rect x="2" y="4" width="60" height="76" rx="6" fill="white" stroke="#D6D3D1" stroke-width="1.2"/>
+            <rect x="-2" y="0" width="60" height="76" rx="6" fill="white" stroke="#A8A29E" stroke-width="1.4"/>
+            <path d="M4 16 L42 16 M4 28 L48 28 M4 40 L42 40 M4 52 L48 52" stroke="#A8A29E" stroke-width="1.4" stroke-linecap="round"/>
+            <text x="30" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#1C1917">Past work</text>
+            <text x="30" y="114" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#94918C">decks, memos</text>
+          </g>
+
+          <!-- Brand -->
+          <g transform="translate(210, 10)">
+            <circle cx="14" cy="18" r="10" fill="#5A38B2"/>
+            <circle cx="32" cy="18" r="10" fill="#FF4E1E"/>
+            <circle cx="50" cy="18" r="10" fill="#C9E5FC"/>
+            <rect x="-2" y="34" width="68" height="14" rx="3" fill="#1C1917"/>
+            <text x="32" y="44" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="10" fill="white">Aa Bb Cc</text>
+            <rect x="-2" y="54" width="68" height="14" rx="3" fill="white" stroke="#D6D3D1"/>
+            <text x="32" y="64" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#1C1917">Logo · SVG</text>
+            <text x="32" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#1C1917">Brand</text>
+            <text x="32" y="114" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#94918C">colors, type, logos</text>
+          </g>
+
+          <!-- Voice -->
+          <g transform="translate(380, 10)">
+            <path d="M10 12 q-6 0 -6 8 v34 q0 8 8 8 h18 l16 14 v-14 h6 q8 0 8 -8 v-34 q0 -8 -8 -8 z" fill="white" stroke="#A8A29E" stroke-width="1.4"/>
+            <path d="M14 28 L52 28 M14 40 L46 40 M14 52 L40 52" stroke="#A8A29E" stroke-width="1.4" stroke-linecap="round"/>
+            <text x="32" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#1C1917">Voice &amp; style</text>
+            <text x="32" y="114" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#94918C">tone, exemplars</text>
+          </g>
+
+          <!-- KB -->
+          <g transform="translate(550, 10)">
+            <rect x="0" y="14" width="64" height="68" rx="6" fill="white" stroke="#A8A29E" stroke-width="1.4"/>
+            <path d="M14 14 v68 M30 14 v68 M46 14 v68" stroke="#A8A29E" stroke-width="1.2"/>
+            <rect x="2" y="6" width="60" height="12" rx="3" fill="#1C1917"/>
+            <text x="32" y="100" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#1C1917">Knowledge base</text>
+            <text x="32" y="114" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#94918C">principles, strategy</text>
+          </g>
+        </g>
+
+        <!-- Arrows down -->
+        <g stroke="#FF6B5B" stroke-width="1.6" fill="none">
+          <path d="M70 134 L240 174" stroke-linecap="round"/>
+          <path d="M242 134 L300 174" stroke-linecap="round"/>
+          <path d="M412 134 L368 174" stroke-linecap="round"/>
+          <path d="M582 134 L428 174" stroke-linecap="round"/>
+          <polygon points="234,170 244,174 236,180" fill="#FF6B5B"/>
+          <polygon points="296,170 304,176 296,180" fill="#FF6B5B"/>
+          <polygon points="372,170 364,176 372,180" fill="#FF6B5B"/>
+          <polygon points="434,170 424,176 432,180" fill="#FF6B5B"/>
+        </g>
+
+        <!-- Local vault -->
+        <g transform="translate(220, 174)">
+          <rect x="0" y="0" width="280" height="74" rx="14" fill="#FFF5F3" stroke="#FF6B5B" stroke-width="2"/>
+          <!-- lock icon -->
+          <g transform="translate(20, 18)">
+            <rect x="4" y="14" width="22" height="18" rx="3" fill="#FF6B5B"/>
+            <path d="M9 14 v-5 a6 6 0 0 1 12 0 v5" stroke="#FF6B5B" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+            <circle cx="15" cy="23" r="2.2" fill="white"/>
+          </g>
+          <text x="160" y="34" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="16" fill="#1C1917">Local Skill workspace</text>
+          <text x="160" y="54" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" fill="#57534E">Inside your Claude Code · nothing leaves your env</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="step-pills step-pills-4">
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="5" y="11" width="14" height="11" rx="2" fill="currentColor"/><path d="M8 11 v-4 a4 4 0 0 1 8 0 v4" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Stays local<small>your env only</small></div>
       </div>
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">How we handle it</div>
-        <ul class="bullet-list">
-          <li><strong>Everything stays local</strong> — files transferred directly, never to a third-party server</li>
-          <li>BAA available where regulated data is involved</li>
-          <li>Clear inventory of what was shared, where it lives, who has access</li>
-          <li>We work with your IT/security team if you have one</li>
-        </ul>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2 L20 6 v6 c0 5 -3.5 8.5 -8 10 c-4.5 -1.5 -8 -5 -8 -10 V6 z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M8.5 12 l2.5 2.5 L16 9" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step-pill-text">BAA available<small>for regulated data</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="19" cy="6" r="2.5" fill="currentColor"/></svg></div>
+        <div class="step-pill-text">IT-friendly<small>partner with your team</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h8M8 17h5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Tracked inventory<small>who, what, where</small></div>
       </div>
     </div>
   </div>
@@ -2241,29 +2455,102 @@ h1, h2, h3 {
       <div class="step-detail-number">3</div>
       <div>
         <div class="step-detail-label">Step 3 of 5</div>
-        <h2 class="step-detail-title">Build Skills — in your Claude Code, locally</h2>
+        <h2 class="step-detail-title">Build Skills — assembled in your Claude Code</h2>
       </div>
     </div>
-    <p class="slide-subhead" style="margin-bottom: 20px;">We work inside your Claude Code instance to turn your documents into Skills. Each Skill is a single self-contained bundle — knowledge, prompts, examples and the actual brand asset files all travel together.</p>
-    <div class="step-detail-grid">
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">What's inside a Skill</div>
-        <ul class="bullet-list">
-          <li>System prompt — voice, style, guardrails</li>
-          <li>Knowledge — relevant context distilled from your docs</li>
-          <li>Examples — past work product that exemplifies the standard</li>
-          <li>Brand assets — logos, palettes, fonts, layout templates</li>
-          <li>Worked recipes — how to handle common variations</li>
-        </ul>
+    <p class="step-lead">EPCH assembles a self-contained Skill bundle for each use case — five ingredients, one folder.</p>
+
+    <div class="step-hero">
+      <svg class="step-hero-svg" viewBox="0 0 720 270" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Claude Code workspace frame -->
+        <g>
+          <rect x="20" y="14" width="680" height="240" rx="14" fill="#1C1917"/>
+          <!-- title bar -->
+          <rect x="20" y="14" width="680" height="28" rx="14" fill="#292524"/>
+          <rect x="20" y="28" width="680" height="14" fill="#292524"/>
+          <circle cx="38" cy="28" r="4" fill="#FF5F57"/>
+          <circle cx="52" cy="28" r="4" fill="#FEBC2E"/>
+          <circle cx="66" cy="28" r="4" fill="#28C840"/>
+          <text x="360" y="33" text-anchor="middle" font-family="ui-monospace, monospace" font-size="11" fill="#A8A29E">claude-code · building pitch-deck Skill</text>
+        </g>
+
+        <!-- 5 ingredient cards arranged around central bundle -->
+        <!-- left side ingredients -->
+        <g transform="translate(48, 60)">
+          <rect x="0" y="0" width="170" height="40" rx="8" fill="#292524" stroke="#FF6B5B" stroke-width="1.2"/>
+          <text x="14" y="18" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#FFB39E">SYSTEM PROMPT</text>
+          <text x="14" y="32" font-family="DM Sans, sans-serif" font-size="10" fill="#A8A29E">voice · style · guardrails</text>
+        </g>
+        <g transform="translate(48, 110)">
+          <rect x="0" y="0" width="170" height="40" rx="8" fill="#292524" stroke="#FF6B5B" stroke-width="1.2"/>
+          <text x="14" y="18" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#FFB39E">KNOWLEDGE</text>
+          <text x="14" y="32" font-family="DM Sans, sans-serif" font-size="10" fill="#A8A29E">distilled from your docs</text>
+        </g>
+        <g transform="translate(48, 160)">
+          <rect x="0" y="0" width="170" height="40" rx="8" fill="#292524" stroke="#FF6B5B" stroke-width="1.2"/>
+          <text x="14" y="18" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#FFB39E">EXAMPLES</text>
+          <text x="14" y="32" font-family="DM Sans, sans-serif" font-size="10" fill="#A8A29E">past work that's exemplary</text>
+        </g>
+
+        <!-- right side ingredients -->
+        <g transform="translate(502, 85)">
+          <rect x="0" y="0" width="170" height="40" rx="8" fill="#292524" stroke="#FF6B5B" stroke-width="1.2"/>
+          <text x="14" y="18" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#FFB39E">BRAND ASSETS</text>
+          <text x="14" y="32" font-family="DM Sans, sans-serif" font-size="10" fill="#A8A29E">logos · palettes · fonts</text>
+        </g>
+        <g transform="translate(502, 135)">
+          <rect x="0" y="0" width="170" height="40" rx="8" fill="#292524" stroke="#FF6B5B" stroke-width="1.2"/>
+          <text x="14" y="18" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#FFB39E">RECIPES</text>
+          <text x="14" y="32" font-family="DM Sans, sans-serif" font-size="10" fill="#A8A29E">how to handle variations</text>
+        </g>
+
+        <!-- Center bundle -->
+        <g transform="translate(260, 85)">
+          <rect x="0" y="0" width="200" height="116" rx="12" fill="#FF6B5B"/>
+          <!-- bundle icon -->
+          <g transform="translate(72, 18)">
+            <path d="M28 4 L52 16 v28 L28 56 L4 44 V16 z" fill="white" opacity="0.18"/>
+            <path d="M28 4 L52 16 L28 28 L4 16 z" fill="white" opacity="0.35"/>
+            <path d="M28 28 L52 16 v28 L28 56 z" fill="white" opacity="0.10"/>
+          </g>
+          <text x="100" y="92" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="15" fill="white">pitch-deck.skill</text>
+          <text x="100" y="106" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="white" opacity="0.85">self-contained · 1 folder</text>
+        </g>
+
+        <!-- connectors from ingredients to bundle -->
+        <g stroke="#FF6B5B" stroke-width="1.4" opacity="0.55" fill="none">
+          <path d="M218 80 L258 110" stroke-linecap="round"/>
+          <path d="M218 130 L258 138" stroke-linecap="round"/>
+          <path d="M218 180 L258 168" stroke-linecap="round"/>
+          <path d="M502 105 L462 122" stroke-linecap="round"/>
+          <path d="M502 155 L462 162" stroke-linecap="round"/>
+        </g>
+
+        <!-- iterate loop -->
+        <g transform="translate(560, 220)" font-family="DM Sans, sans-serif">
+          <path d="M0 6 q -10 -16 10 -16 q 20 0 10 16" stroke="#FFB39E" stroke-width="1.4" fill="none"/>
+          <polygon points="-3,3 0,10 4,4" fill="#FFB39E"/>
+          <text x="30" y="6" font-size="11" fill="#FFB39E" font-weight="600">build · test · refine</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="step-pills step-pills-4">
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 2 v4 M12 18 v4 M2 12 h4 M18 12 h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="12" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step-pill-text">Iterative<small>build · test · refine</small></div>
       </div>
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">How we work</div>
-        <ul class="bullet-list">
-          <li>Iterative — build, test against real prompts, refine</li>
-          <li>EPCH does the heavy lift; you review and validate output quality</li>
-          <li>Each Skill is independently testable and shippable</li>
-          <li>No external dependencies — Skills run wherever Chat runs</li>
-        </ul>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3 L20 7 v10 L12 21 L4 17 V7 z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M4 7 L12 11 L20 7" stroke="currentColor" stroke-width="1.8"/><path d="M12 11 v10" stroke="currentColor" stroke-width="1.8"/></svg></div>
+        <div class="step-pill-text">Self-contained<small>one folder bundle</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M9 7 L4 12 L9 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M15 7 L20 12 L15 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step-pill-text">No dependencies<small>runs wherever Chat runs</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12 l4 4 L19 7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step-pill-text">Independently shippable<small>ship one Skill at a time</small></div>
       </div>
     </div>
   </div>
@@ -2278,28 +2565,86 @@ h1, h2, h3 {
       <div class="step-detail-number">4</div>
       <div>
         <div class="step-detail-label">Step 4 of 5</div>
-        <h2 class="step-detail-title">Deploy Skills — directly into your Claude Chat</h2>
+        <h2 class="step-detail-title">Deploy Skills — straight into your Claude Chat</h2>
       </div>
     </div>
-    <p class="slide-subhead" style="margin-bottom: 24px;">Skills install directly into your Claude Chat as native files. No server to stand up, no MCP integration, no GitHub repo, no third-party hosting. Your team invokes a Skill the same way they'd start any chat.</p>
-    <div class="step-detail-grid">
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">How deployment works</div>
-        <ul class="bullet-list">
-          <li>Skills delivered as a folder of files</li>
-          <li>Loaded into Claude Chat for each user in the test cohort</li>
-          <li>Versioned — every update is a new bundle, easy to roll back</li>
-          <li>Documentation included for each Skill (what it does, how to invoke)</li>
-        </ul>
+    <p class="step-lead">A folder of files loaded into Chat. No server. No MCP. No GitHub. Your team invokes a Skill like any other chat.</p>
+
+    <div class="step-hero">
+      <svg class="step-hero-svg" viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Skill bundle (left) -->
+        <g transform="translate(40, 60)">
+          <rect x="0" y="0" width="180" height="120" rx="14" fill="#FFF5F3" stroke="#FF6B5B" stroke-width="2"/>
+          <!-- bundle icon -->
+          <g transform="translate(56, 18)">
+            <path d="M34 6 L62 20 v32 L34 66 L6 52 V20 z" fill="#FF6B5B" opacity="0.15"/>
+            <path d="M34 6 L62 20 L34 34 L6 20 z" fill="#FF6B5B" opacity="0.4"/>
+            <path d="M34 34 L62 20 v32 L34 66 z" fill="#FF6B5B" opacity="0.25"/>
+            <path d="M34 6 L62 20 v32 L34 66 L6 52 V20 z M34 6 L34 34 M6 20 L34 34 L62 20" stroke="#FF6B5B" stroke-width="1.4" fill="none"/>
+          </g>
+          <text x="90" y="106" text-anchor="middle" font-family="Fraunces, serif" font-weight="600" font-size="14" fill="#1C1917">pitch-deck.skill</text>
+        </g>
+
+        <!-- Arrow flow with "drop into" label -->
+        <g>
+          <path d="M232 120 L478 120" stroke="#FF6B5B" stroke-width="2.2" fill="none" stroke-linecap="round" stroke-dasharray="6 6"/>
+          <polygon points="476,113 488,120 476,127" fill="#FF6B5B"/>
+          <text x="355" y="106" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#FF6B5B" letter-spacing="0.08em">DROP INTO CHAT</text>
+          <text x="355" y="142" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" fill="#94918C" font-style="italic">a folder of files</text>
+        </g>
+
+        <!-- Claude Chat window (right) -->
+        <g transform="translate(498, 32)">
+          <rect x="0" y="0" width="180" height="176" rx="12" fill="white" stroke="#D6D3D1" stroke-width="1.4"/>
+          <!-- Chat header -->
+          <rect x="0" y="0" width="180" height="28" rx="12" fill="#FAF9F7"/>
+          <rect x="0" y="14" width="180" height="14" fill="#FAF9F7"/>
+          <path d="M0 28 L180 28" stroke="#D6D3D1" stroke-width="1"/>
+          <text x="14" y="19" font-family="DM Sans, sans-serif" font-size="11" font-weight="600" fill="#1C1917">Claude Chat</text>
+          <circle cx="166" cy="14" r="4" fill="#10b981"/>
+
+          <!-- Skill chip loaded -->
+          <rect x="12" y="42" width="156" height="26" rx="6" fill="#FFF5F3" stroke="#FF6B5B" stroke-width="1.2"/>
+          <circle cx="24" cy="55" r="4" fill="#FF6B5B"/>
+          <text x="36" y="59" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" fill="#1C1917">pitch-deck.skill loaded</text>
+
+          <!-- Sample chat lines -->
+          <rect x="12" y="82" width="120" height="20" rx="10" fill="#F3F2EF"/>
+          <text x="20" y="96" font-family="DM Sans, sans-serif" font-size="9" fill="#57534E">Build deck for Humana</text>
+          <rect x="46" y="110" width="122" height="20" rx="10" fill="#FF6B5B"/>
+          <text x="56" y="124" font-family="DM Sans, sans-serif" font-size="9" fill="white">On it — using your brand</text>
+          <rect x="12" y="138" width="84" height="20" rx="10" fill="#F3F2EF"/>
+          <text x="20" y="152" font-family="DM Sans, sans-serif" font-size="9" fill="#57534E">Use the new logo</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="step-pills step-pills-3" style="margin-bottom: 10px;">
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M3 7 a2 2 0 0 1 2 -2 h4 l2 2 h8 a2 2 0 0 1 2 2 v9 a2 2 0 0 1 -2 2 h-14 a2 2 0 0 1 -2 -2 z" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></div>
+        <div class="step-pill-text">Folder of files<small>delivered &amp; loaded</small></div>
       </div>
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">Why local matters</div>
-        <ul class="bullet-list">
-          <li>No company data leaves your environment for a third party</li>
-          <li>No infrastructure to maintain or pay for</li>
-          <li>No vendor lock-in — Skills are your files</li>
-          <li>Works wherever your Claude Chat works</li>
-        </ul>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 8 v4 l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Versioned<small>every update rollback-safe</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M8 9h8M8 13h8M8 17h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Docs included<small>what it does, how to invoke</small></div>
+      </div>
+    </div>
+    <div class="step-pills step-pills-3">
+      <div class="step-pill step-pill-neg">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 5.5 L18.5 18.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">MCP server</div>
+      </div>
+      <div class="step-pill step-pill-neg">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 5.5 L18.5 18.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">GitHub repo</div>
+      </div>
+      <div class="step-pill step-pill-neg">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M5.5 5.5 L18.5 18.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Third-party host</div>
       </div>
     </div>
   </div>
@@ -2314,28 +2659,86 @@ h1, h2, h3 {
       <div class="step-detail-number">5</div>
       <div>
         <div class="step-detail-label">Step 5 of 5</div>
-        <h2 class="step-detail-title">Test &amp; iterate — prove value before broader rollout</h2>
+        <h2 class="step-detail-title">Test &amp; iterate — earn the broader rollout</h2>
       </div>
     </div>
-    <p class="slide-subhead" style="margin-bottom: 24px;">A structured 2–4 week trial period with the cohort defined in Step 1. We watch real usage, gather feedback, and refine each Skill until output quality is consistently great — then we open it up to the rest of the company.</p>
-    <div class="step-detail-grid">
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">What happens during the trial</div>
-        <ul class="bullet-list">
-          <li>Cohort uses the Skills on real work, not test prompts</li>
-          <li>Weekly checkins — what's working, what's not, what's missing</li>
-          <li>Rapid iteration — Skills get tightened up week by week</li>
-          <li>Quality bar: output good enough that the user ships it with minimal editing</li>
-        </ul>
+    <p class="step-lead">2–4 weeks. The cohort uses the Skills on real work. We tighten each Skill until it ships with minimal editing. Then the company gets it.</p>
+
+    <div class="step-hero">
+      <svg class="step-hero-svg" viewBox="0 0 720 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Test cohort (left) -->
+        <g transform="translate(40, 40)">
+          <rect x="0" y="0" width="170" height="160" rx="14" fill="#FFF5F3" stroke="#FF6B5B" stroke-width="1.6"/>
+          <text x="85" y="22" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#FF6B5B" letter-spacing="0.08em">TEST COHORT</text>
+          <!-- 6 people dots -->
+          <g fill="#FF6B5B">
+            <circle cx="42" cy="58" r="9"/>
+            <circle cx="85" cy="58" r="9"/>
+            <circle cx="128" cy="58" r="9"/>
+            <circle cx="42" cy="92" r="9"/>
+            <circle cx="85" cy="92" r="9"/>
+            <circle cx="128" cy="92" r="9"/>
+          </g>
+          <text x="85" y="128" text-anchor="middle" font-family="Fraunces, serif" font-weight="500" font-size="13" fill="#1C1917">Leadership +</text>
+          <text x="85" y="146" text-anchor="middle" font-family="Fraunces, serif" font-weight="500" font-size="13" fill="#1C1917">power users</text>
+        </g>
+
+        <!-- Middle: iteration loop -->
+        <g transform="translate(250, 30)">
+          <!-- circular loop -->
+          <circle cx="100" cy="90" r="42" stroke="#FF6B5B" stroke-width="1.6" fill="none" stroke-dasharray="6 5"/>
+          <!-- arrows around circle (clockwise rotation hint) -->
+          <polygon points="142,90 138,82 136,98" fill="#FF6B5B"/>
+          <polygon points="58,90 62,98 64,82" fill="#FF6B5B"/>
+          <!-- outside labels at cardinal points -->
+          <text x="100" y="32" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#FF6B5B" letter-spacing="0.08em">USE</text>
+          <text x="170" y="94" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#FF6B5B" letter-spacing="0.08em">FEEDBACK</text>
+          <text x="100" y="156" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#FF6B5B" letter-spacing="0.08em">REFINE</text>
+          <text x="30" y="94" text-anchor="end" font-family="DM Sans, sans-serif" font-size="11" font-weight="700" fill="#FF6B5B" letter-spacing="0.08em">SHIP</text>
+          <!-- center label -->
+          <text x="100" y="86" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="500" font-size="11" fill="#94918C">weekly</text>
+          <text x="100" y="100" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-weight="500" font-size="11" fill="#94918C">checkins</text>
+        </g>
+
+        <!-- Arrow → company -->
+        <g>
+          <path d="M464 120 L504 120" stroke="#FF6B5B" stroke-width="2" stroke-linecap="round" fill="none"/>
+          <polygon points="500,113 514,120 500,127" fill="#FF6B5B"/>
+          <text x="488" y="106" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="600" fill="#FF6B5B" letter-spacing="0.06em">ROLLOUT</text>
+        </g>
+
+        <!-- Company-wide grid (right) -->
+        <g transform="translate(520, 40)">
+          <rect x="0" y="0" width="160" height="160" rx="14" fill="#1C1917"/>
+          <text x="80" y="22" text-anchor="middle" font-family="DM Sans, sans-serif" font-size="10" font-weight="700" fill="#FFB39E" letter-spacing="0.08em">WHOLE COMPANY</text>
+          <!-- grid of dots -->
+          <g fill="#FF6B5B">
+            <circle cx="22" cy="46" r="5"/><circle cx="48" cy="46" r="5"/><circle cx="74" cy="46" r="5"/><circle cx="100" cy="46" r="5"/><circle cx="126" cy="46" r="5"/><circle cx="148" cy="46" r="5"/>
+            <circle cx="22" cy="68" r="5"/><circle cx="48" cy="68" r="5"/><circle cx="74" cy="68" r="5"/><circle cx="100" cy="68" r="5"/><circle cx="126" cy="68" r="5"/><circle cx="148" cy="68" r="5"/>
+            <circle cx="22" cy="90" r="5"/><circle cx="48" cy="90" r="5"/><circle cx="74" cy="90" r="5"/><circle cx="100" cy="90" r="5"/><circle cx="126" cy="90" r="5"/><circle cx="148" cy="90" r="5"/>
+            <circle cx="22" cy="112" r="5"/><circle cx="48" cy="112" r="5"/><circle cx="74" cy="112" r="5"/><circle cx="100" cy="112" r="5"/><circle cx="126" cy="112" r="5"/><circle cx="148" cy="112" r="5"/>
+            <circle cx="22" cy="134" r="5"/><circle cx="48" cy="134" r="5"/><circle cx="74" cy="134" r="5"/><circle cx="100" cy="134" r="5"/><circle cx="126" cy="134" r="5"/><circle cx="148" cy="134" r="5"/>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <div class="step-pills step-pills-4">
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="3.5" stroke="currentColor" stroke-width="1.8"/><path d="M4 20c1.5-4 5-6 8-6s6.5 2 8 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div>
+        <div class="step-pill-text">Real work<small>not test prompts</small></div>
       </div>
-      <div class="step-detail-col">
-        <div class="step-detail-col-label">What comes next</div>
-        <ul class="bullet-list">
-          <li>Workshop to review wins, gaps and next priorities</li>
-          <li>Broader rollout to the rest of the company</li>
-          <li>Training sessions and documentation for new users</li>
-          <li>Quarterly check-ins to expand the Skills library based on usage</li>
-        </ul>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 15 q-2 0 -2 -2 v-6 q0 -2 2 -2 h14 q2 0 2 2 v6 q0 2 -2 2 h-3 l-3 4 v-4 z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/></svg></div>
+        <div class="step-pill-text">Weekly checkins<small>tight feedback loop</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M13 3 L5 13 h6 L9 21 L19 11 h-6 z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linejoin="round"/></svg></div>
+        <div class="step-pill-text">Rapid iteration<small>Skills tighten week by week</small></div>
+      </div>
+      <div class="step-pill">
+        <div class="step-pill-icon"><svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M8 12 l3 3 l5 -6" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="step-pill-text">Ship-ready output<small>minimal editing needed</small></div>
       </div>
     </div>
   </div>
