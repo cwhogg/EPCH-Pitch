@@ -3286,7 +3286,7 @@ h1, h2, h3 {
 <!-- ==========================================
      SLIDE 11: Company KPI — Mock Dashboard
      ========================================== -->
-<section class="slide" data-slide="11">
+<section class="slide" data-slide="11" hidden style="display: none;">
   <div class="slide-inner">
     <h2 class="slide-headline">AI usage should be a company KPI</h2>
     <p class="slide-subhead" style="margin-bottom: 20px;">Optionally, we can monitor and report on AI usage across the company and highlight top use cases and areas for improvement</p>
@@ -3466,7 +3466,7 @@ h1, h2, h3 {
      ========================================== -->
 <script>
 (function() {
-  const slides = document.querySelectorAll('.slide');
+  const slides = document.querySelectorAll('.slide:not([hidden])');
   const dotsContainer = document.getElementById('navDots');
   const counter = document.getElementById('slideCounter');
   const total = slides.length;
