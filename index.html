@@ -840,23 +840,37 @@ h1, h2, h3 {
   transform-origin: center center;
 }
 
-.deck-thumb-0 {
-  z-index: 4;
-  transform: translate(0, 0) rotate(0deg);
+.deck-stack-wrap {
+  overflow: visible;
+  aspect-ratio: 1 / 0.95;
 }
-.deck-thumb-1 {
+
+.deck-thumb-front {
   z-index: 3;
-  transform: translate(18px, 14px) rotate(2.5deg);
+  width: 86%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  inset: auto 0 0 0;
+  transform: rotate(-4deg);
 }
-.deck-thumb-2 {
+
+.deck-thumb-mid {
   z-index: 2;
-  transform: translate(36px, 28px) rotate(5deg);
-  opacity: 0.85;
+  width: 78%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  inset: 0 -2% auto auto;
+  transform: rotate(7deg);
 }
-.deck-thumb-3 {
+
+.deck-thumb-back {
   z-index: 1;
-  transform: translate(54px, 42px) rotate(7.5deg);
-  opacity: 0.65;
+  width: 60%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  inset: 4% auto auto -2%;
+  transform: rotate(-11deg);
+  opacity: 0.7;
 }
 
 /* ==========================================
@@ -887,6 +901,12 @@ h1, h2, h3 {
   line-height: 1.4;
 }
 
+.screen-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .screen-frame {
   border-radius: var(--radius-md);
   overflow: hidden;
@@ -896,6 +916,11 @@ h1, h2, h3 {
   aspect-ratio: 16 / 9;
   filter: saturate(0.7);
   opacity: 0.85;
+}
+
+.screen-pair .screen-frame-bottom {
+  width: 88%;
+  align-self: flex-end;
 }
 
 .screen-frame img {
@@ -1596,10 +1621,9 @@ h1, h2, h3 {
       <div class="deck-stack">
         <div class="deck-stack-label">Output from a generic AI pitch-deck prompt</div>
         <div class="deck-stack-wrap">
-          <img class="deck-thumb deck-thumb-3" src="img/cardio-06-team.png" alt="Generic AI deck slide — team grid">
-          <img class="deck-thumb deck-thumb-2" src="img/cardio-04-solution.png" alt="Generic AI deck slide — solution overview">
-          <img class="deck-thumb deck-thumb-1" src="img/cardio-02-stats.png" alt="Generic AI deck slide — stats">
-          <img class="deck-thumb deck-thumb-0" src="img/cardio-01-title.png" alt="Generic AI deck slide — title">
+          <img class="deck-thumb deck-thumb-back" src="img/cardio-04-solution.png" alt="Generic AI deck — solution overview slide">
+          <img class="deck-thumb deck-thumb-mid" src="img/cardio-02-stats.png" alt="Generic AI deck — stats slide">
+          <img class="deck-thumb deck-thumb-front" src="img/cardio-01-title.png" alt="Generic AI deck — title slide">
         </div>
       </div>
     </div>
@@ -1671,15 +1695,25 @@ h1, h2, h3 {
     <div class="comparison-grid">
       <div>
         <div class="comparison-label muted">Before — generic Claude Chat</div>
-        <div class="screen-frame">
-          <img src="img/cardio-01-title.png" alt="Generic AI-generated deck — title slide">
+        <div class="screen-pair">
+          <div class="screen-frame screen-frame-top">
+            <img src="img/cardio-01-title.png" alt="Generic AI-generated deck — title slide">
+          </div>
+          <div class="screen-frame screen-frame-bottom">
+            <img src="img/cardio-02-stats.png" alt="Generic AI-generated deck — stats slide">
+          </div>
         </div>
         <div class="screen-caption">Generic visual identity. No brand. No voice. Looks AI-made.</div>
       </div>
       <div>
         <div class="comparison-label coral">After — Skills loaded</div>
-        <div class="screen-frame screen-frame-elevated">
-          <img src="img/marley-01-title.png" alt="Personalized deck — title slide on brand">
+        <div class="screen-pair">
+          <div class="screen-frame screen-frame-elevated screen-frame-top">
+            <img src="img/marley-01-title.png" alt="Personalized deck — title slide on brand">
+          </div>
+          <div class="screen-frame screen-frame-elevated screen-frame-bottom">
+            <img src="img/marley-15-results.png" alt="Personalized deck — clinical results slide on brand">
+          </div>
         </div>
         <div class="screen-caption">On-brand colors, typography, logo. Reads like the company wrote it.</div>
       </div>
