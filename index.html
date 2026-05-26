@@ -1197,13 +1197,8 @@ h1, h2, h3 {
 .screen-set {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-}
-
-.screen-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  gap: 12px;
+  align-items: center;
 }
 
 .screen-frame {
@@ -1215,16 +1210,11 @@ h1, h2, h3 {
   aspect-ratio: 16 / 9;
   filter: saturate(0.7);
   opacity: 0.85;
+  width: 100%;
 }
 
-.screen-frame-mini {
-  border-radius: var(--radius-sm);
-  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.06);
-}
-
-.screen-frame-elevated.screen-frame-mini {
-  border-width: 1.5px;
-  box-shadow: 0 1px 3px rgba(255, 107, 91, 0.18), 0 0 0 2px var(--accent-coral-soft);
+.screen-frame-secondary {
+  width: 88%;
 }
 
 .screen-frame img {
@@ -2566,13 +2556,11 @@ h1, h2, h3 {
           <div class="screen-frame screen-frame-hero">
             <img src="img/cardio-01-title.png" alt="Generic AI-generated deck — title slide">
           </div>
-          <div class="screen-row">
-            <div class="screen-frame screen-frame-mini"><img src="img/cardio-02-stats.png" alt="Generic deck — stats slide"></div>
-            <div class="screen-frame screen-frame-mini"><img src="img/cardio-04-solution.png" alt="Generic deck — solution slide"></div>
-            <div class="screen-frame screen-frame-mini"><img src="img/cardio-08-journey.png" alt="Generic deck — member journey slide"></div>
+          <div class="screen-frame screen-frame-secondary">
+            <img src="img/cardio-02-stats.png" alt="Generic AI-generated deck — stats content slide">
           </div>
         </div>
-        <div class="screen-caption">Generic visual identity across every slide. No brand. No voice. Looks AI-made.</div>
+        <div class="screen-caption">Generic visual identity on every slide. No brand. No voice. Looks AI-made.</div>
       </div>
       <div>
         <div class="comparison-label coral">After — Skills loaded</div>
@@ -2580,13 +2568,11 @@ h1, h2, h3 {
           <div class="screen-frame screen-frame-elevated screen-frame-hero">
             <img src="img/marley-01-title.png" alt="Personalized deck — title slide on brand">
           </div>
-          <div class="screen-row">
-            <div class="screen-frame screen-frame-elevated screen-frame-mini"><img src="img/marley-08-scope.png" alt="Personalized deck — scope slide"></div>
-            <div class="screen-frame screen-frame-elevated screen-frame-mini"><img src="img/marley-12-engagement.png" alt="Personalized deck — engagement slide"></div>
-            <div class="screen-frame screen-frame-elevated screen-frame-mini"><img src="img/marley-15-results.png" alt="Personalized deck — clinical results slide"></div>
+          <div class="screen-frame screen-frame-elevated screen-frame-secondary">
+            <img src="img/marley-15-results.png" alt="Personalized deck — clinical results content slide">
           </div>
         </div>
-        <div class="screen-caption">On-brand colors, typography, layouts on every slide. Reads like the company wrote it.</div>
+        <div class="screen-caption">On-brand colors, typography and layout on every slide. Reads like the company wrote it.</div>
       </div>
     </div>
   </div>
