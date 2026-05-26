@@ -723,6 +723,35 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  position: relative;
+}
+
+.skill-card-foundation {
+  background: linear-gradient(135deg, #ff6b5b 0%, #ff8f6b 100%);
+  border-color: transparent;
+  box-shadow: 0 4px 12px rgba(255, 107, 91, 0.25);
+}
+
+.skill-card-foundation .skill-card-title {
+  color: white;
+}
+
+.skill-card-foundation .skill-card-meta {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.skill-card-tag {
+  align-self: flex-start;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.22);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-bottom: 2px;
 }
 
 .skill-card-title {
@@ -2220,6 +2249,11 @@ h1, h2, h3 {
       <div class="group-container mcp-server" style="border-color: var(--accent-coral); border-width: 2px; background: var(--accent-coral-soft);">
         <span class="group-label" style="background: white;">EPCH builds Skills in your Claude Code <span class="local-badge">100% local</span></span>
         <div class="mcp-server-inner" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="skill-card skill-card-foundation">
+            <div class="skill-card-tag">Foundation</div>
+            <div class="skill-card-title">Foundation Skills</div>
+            <div class="skill-card-meta">principles · voice · brand · context — shared by every use-case Skill</div>
+          </div>
           <div class="skill-card">
             <div class="skill-card-title">Pitch Deck Skill</div>
             <div class="skill-card-meta">Includes: brand assets, past decks, voice rules</div>
@@ -2227,10 +2261,6 @@ h1, h2, h3 {
           <div class="skill-card">
             <div class="skill-card-title">Briefing Memo Skill</div>
             <div class="skill-card-meta">Includes: templates, principles, KB excerpts</div>
-          </div>
-          <div class="skill-card">
-            <div class="skill-card-title">Contract Review Skill</div>
-            <div class="skill-card-meta">Includes: redlines, priorities, term library</div>
           </div>
         </div>
         <div class="skill-bundle-note">Each Skill is a self-contained bundle — files, prompts and assets travel together.</div>
