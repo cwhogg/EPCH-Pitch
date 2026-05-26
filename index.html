@@ -778,6 +778,207 @@ h1, h2, h3 {
 }
 
 /* ==========================================
+   Skill anatomy slide (what's in a Skill)
+   ========================================== */
+.skill-anatomy {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 24px;
+  align-items: stretch;
+}
+
+.skill-tree {
+  background: #1C1917;
+  border-radius: var(--radius-lg);
+  padding: 16px 18px;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  color: #E7E5E4;
+  box-shadow: var(--shadow-elevated);
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-tree-header {
+  font-size: 12px;
+  font-weight: 600;
+  color: #FAF9F7;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.skill-tree-body {
+  font-size: 10.5px;
+  line-height: 1.55;
+  display: flex;
+  flex-direction: column;
+}
+
+.t-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  white-space: nowrap;
+}
+
+.t-row > .t-file,
+.t-row > .t-folder {
+  flex-shrink: 0;
+}
+
+.t-icon {
+  display: inline-block;
+  margin-right: 4px;
+  font-size: 10px;
+}
+
+.t-file {
+  color: #E7E5E4;
+}
+
+.t-folder {
+  color: #FFB39E;
+  font-weight: 600;
+}
+
+.t-nested {
+  padding-left: 16px;
+}
+
+.t-note {
+  color: #94918C;
+  font-style: italic;
+  font-size: 10px;
+  margin-left: auto;
+}
+
+.skill-explain {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skill-explain-row {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.skill-explain-num {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--accent-coral-soft);
+  color: var(--accent-coral);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.skill-explain-title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+
+.skill-explain-body {
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+}
+
+.skill-explain-body code {
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 11px;
+  background: var(--bg-secondary);
+  padding: 1px 6px;
+  border-radius: 4px;
+  color: var(--text-primary);
+}
+
+.brand-swatches {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.brand-swatches .sw {
+  width: 22px;
+  height: 22px;
+  border-radius: 6px;
+  border: 1px solid rgba(28, 25, 23, 0.10);
+  flex-shrink: 0;
+  display: inline-block;
+}
+
+.brand-swatches .sw-cream {
+  border-color: rgba(28, 25, 23, 0.16);
+}
+
+.sw-label {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-left: 4px;
+}
+
+.brand-asset-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.brand-asset-logo {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+}
+
+.brand-asset-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+
+.brand-asset-more {
+  font-size: 11px;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.skill-bundle-footer {
+  margin-top: 2px;
+  padding: 10px 12px;
+  background: var(--accent-coral-soft);
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  line-height: 1.45;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.skill-bundle-footer strong {
+  color: var(--accent-coral);
+  font-weight: 700;
+}
+
+/* ==========================================
    SLIDE 8: Comparison
    ========================================== */
 .comparison-grid {
@@ -901,10 +1102,16 @@ h1, h2, h3 {
   line-height: 1.4;
 }
 
-.screen-pair {
+.screen-set {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+
+.screen-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
 }
 
 .screen-frame {
@@ -918,9 +1125,14 @@ h1, h2, h3 {
   opacity: 0.85;
 }
 
-.screen-pair .screen-frame-bottom {
-  width: 88%;
-  align-self: flex-end;
+.screen-frame-mini {
+  border-radius: var(--radius-sm);
+  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.06);
+}
+
+.screen-frame-elevated.screen-frame-mini {
+  border-width: 1.5px;
+  box-shadow: 0 1px 3px rgba(255, 107, 91, 0.18), 0 0 0 2px var(--accent-coral-soft);
 }
 
 .screen-frame img {
@@ -1680,6 +1892,91 @@ h1, h2, h3 {
 </section>
 
 <!-- ==========================================
+     SLIDE 7a: What's in a Skill — payer-pitch-deck example
+     ========================================== -->
+<section class="slide" data-slide="7a">
+  <div class="slide-inner">
+    <h2 class="slide-headline" style="font-size: 28px; margin-bottom: 4px;">What's in a Skill? A look inside the <span style="font-family: var(--font-body); font-weight: 600; color: var(--accent-coral);">payer-pitch-deck</span> Skill</h2>
+    <p class="slide-subhead" style="font-size: 15px; margin-bottom: 16px;">A Skill is a folder. Everything Claude needs to build a deck the Marley way travels together — instructions, voice rules, the brand system, and the actual asset files.</p>
+
+    <div class="skill-anatomy">
+      <div class="skill-tree">
+        <div class="skill-tree-header">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" style="vertical-align: -2px;"><path d="M1 4 a2 2 0 0 1 2 -2 h3 l2 2 h5 a2 2 0 0 1 2 2 v6 a2 2 0 0 1 -2 2 h-10 a2 2 0 0 1 -2 -2 z" stroke="var(--accent-coral)" stroke-width="1.5" fill="none"/></svg>
+          payer-pitch-deck/
+        </div>
+        <div class="skill-tree-body">
+          <div class="t-row"><span class="t-file"><span class="t-icon">📄</span>SKILL.md</span><span class="t-note">how to use this skill</span></div>
+          <div class="t-row"><span class="t-file"><span class="t-icon">📄</span>narrative-arc.md</span><span class="t-note">3-act story structure</span></div>
+          <div class="t-row"><span class="t-file"><span class="t-icon">📄</span>evidence-conventions.md</span><span class="t-note">how to cite claims</span></div>
+          <div class="t-row"><span class="t-file"><span class="t-icon">📄</span>source-refs.md</span><span class="t-note">canonical numbers</span></div>
+          <div class="t-row"><span class="t-folder"><span class="t-icon">📁</span>visual-brand/</span></div>
+          <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>colors.md</span></div>
+          <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>typography.md</span></div>
+          <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>layouts.md</span><span class="t-note">7 layouts</span></div>
+          <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>slide-patterns.md</span><span class="t-note">~15 patterns</span></div>
+          <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>image-style.md</span></div>
+          <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>logo-usage.md</span></div>
+          <div class="t-row"><span class="t-folder"><span class="t-icon">📁</span>assets/</span></div>
+          <div class="t-row"><span class="t-folder t-nested"><span class="t-icon">📁</span>logos/</span><span class="t-note">13 SVGs</span></div>
+          <div class="t-row"><span class="t-folder t-nested"><span class="t-icon">📁</span>icons/</span><span class="t-note">15 SVGs</span></div>
+          <div class="t-row"><span class="t-folder t-nested"><span class="t-icon">📁</span>photography/</span><span class="t-note">studio JPGs</span></div>
+          <div class="t-row"><span class="t-folder"><span class="t-icon">📁</span>examples/</span></div>
+          <div class="t-row"><span class="t-file t-nested"><span class="t-icon">📄</span>bcbs-fl-march-2024.md</span><span class="t-note">past deck</span></div>
+          <div class="t-row"><span class="t-folder"><span class="t-icon">📁</span>templates/</span></div>
+        </div>
+      </div>
+
+      <div class="skill-explain">
+        <div class="skill-explain-row">
+          <div class="skill-explain-num">1</div>
+          <div>
+            <div class="skill-explain-title">Instructions — how to do the work</div>
+            <div class="skill-explain-body"><code>SKILL.md</code> defines steps. <code>narrative-arc.md</code> sets the 3-act story every Marley payer deck follows. <code>evidence-conventions.md</code> sets rules for citing clinical and economic claims.</div>
+          </div>
+        </div>
+
+        <div class="skill-explain-row">
+          <div class="skill-explain-num">2</div>
+          <div>
+            <div class="skill-explain-title">Visual brand — so output <em>looks</em> Marley</div>
+            <div class="skill-explain-body">Colors, typography, 7 named layouts, ~15 composition patterns. Every slide Claude drafts names a specific layout and pattern from these files.</div>
+            <div class="brand-swatches">
+              <span class="sw" style="background: #5A38B2;" title="Marley Purple"></span>
+              <span class="sw" style="background: #FF4E1E;" title="Marley Red"></span>
+              <span class="sw" style="background: #FFDFD6;" title="Marley Peach"></span>
+              <span class="sw" style="background: #C9E5FC;" title="Marley Sky"></span>
+              <span class="sw sw-cream" style="background: #FDF7EF;" title="Marley Cream"></span>
+              <span class="sw-label">Marley's real brand palette, in the Skill</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-explain-row">
+          <div class="skill-explain-num">3</div>
+          <div>
+            <div class="skill-explain-title">Brand assets — the actual files</div>
+            <div class="skill-explain-body">Logos and icons travel inside the Skill as SVGs. Claude references them by filename in every slide spec — no external assets, no broken links.</div>
+            <div class="brand-asset-row">
+              <img class="brand-asset-logo" src="img/skill/marley-monogram-purple.svg" alt="Marley monogram">
+              <img class="brand-asset-icon" src="img/skill/icon-heart.svg" alt="heart icon">
+              <img class="brand-asset-icon" src="img/skill/icon-pill.svg" alt="pill icon">
+              <img class="brand-asset-icon" src="img/skill/icon-stethoscope.svg" alt="stethoscope icon">
+              <img class="brand-asset-icon" src="img/skill/icon-bp.svg" alt="BP icon">
+              <span class="brand-asset-more">+ 9 icons, 12 logos, 3 photos</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-bundle-footer">
+          <strong>One folder.</strong> Self-contained. Versioned. Includes a worked past deck (BCBS-FL) as the quality reference. Travels into your Claude Chat as-is.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
      SLIDE 8: 10x Results — Before/After
      ========================================== -->
 <section class="slide" data-slide="8">
@@ -1695,27 +1992,31 @@ h1, h2, h3 {
     <div class="comparison-grid">
       <div>
         <div class="comparison-label muted">Before — generic Claude Chat</div>
-        <div class="screen-pair">
-          <div class="screen-frame screen-frame-top">
+        <div class="screen-set">
+          <div class="screen-frame screen-frame-hero">
             <img src="img/cardio-01-title.png" alt="Generic AI-generated deck — title slide">
           </div>
-          <div class="screen-frame screen-frame-bottom">
-            <img src="img/cardio-02-stats.png" alt="Generic AI-generated deck — stats slide">
+          <div class="screen-row">
+            <div class="screen-frame screen-frame-mini"><img src="img/cardio-02-stats.png" alt="Generic deck — stats slide"></div>
+            <div class="screen-frame screen-frame-mini"><img src="img/cardio-04-solution.png" alt="Generic deck — solution slide"></div>
+            <div class="screen-frame screen-frame-mini"><img src="img/cardio-08-journey.png" alt="Generic deck — member journey slide"></div>
           </div>
         </div>
-        <div class="screen-caption">Generic visual identity. No brand. No voice. Looks AI-made.</div>
+        <div class="screen-caption">Generic visual identity across every slide. No brand. No voice. Looks AI-made.</div>
       </div>
       <div>
         <div class="comparison-label coral">After — Skills loaded</div>
-        <div class="screen-pair">
-          <div class="screen-frame screen-frame-elevated screen-frame-top">
+        <div class="screen-set">
+          <div class="screen-frame screen-frame-elevated screen-frame-hero">
             <img src="img/marley-01-title.png" alt="Personalized deck — title slide on brand">
           </div>
-          <div class="screen-frame screen-frame-elevated screen-frame-bottom">
-            <img src="img/marley-15-results.png" alt="Personalized deck — clinical results slide on brand">
+          <div class="screen-row">
+            <div class="screen-frame screen-frame-elevated screen-frame-mini"><img src="img/marley-08-scope.png" alt="Personalized deck — scope slide"></div>
+            <div class="screen-frame screen-frame-elevated screen-frame-mini"><img src="img/marley-12-engagement.png" alt="Personalized deck — engagement slide"></div>
+            <div class="screen-frame screen-frame-elevated screen-frame-mini"><img src="img/marley-15-results.png" alt="Personalized deck — clinical results slide"></div>
           </div>
         </div>
-        <div class="screen-caption">On-brand colors, typography, logo. Reads like the company wrote it.</div>
+        <div class="screen-caption">On-brand colors, typography, layouts on every slide. Reads like the company wrote it.</div>
       </div>
     </div>
   </div>
