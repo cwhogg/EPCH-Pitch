@@ -1607,23 +1607,135 @@ h1, h2, h3 {
   background: var(--accent-coral-soft);
 }
 
-.real-deck-grid {
+/* Interactive deck viewer */
+.real-deck-viewer {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 6px;
-  width: 100%;
+  grid-template-columns: 44px 1fr 44px;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 12px;
 }
 
-.real-deck-grid img {
-  width: 100%;
-  height: auto;
+.rdv-nav {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--accent-coral);
+  color: white;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(255, 107, 91, 0.32);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.rdv-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+.rdv-nav:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(255, 107, 91, 0.4);
+}
+
+.rdv-nav:active {
+  transform: translateY(0);
+}
+
+.rdv-frame {
+  position: relative;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
-  border-radius: 4px;
-  border: 1px solid var(--border-subtle);
-  box-shadow: 0 1px 2px rgba(28, 25, 23, 0.06);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-default);
+  box-shadow: var(--shadow-elevated);
   background: white;
+  max-height: 440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.rdv-slide {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
   display: block;
+  background: white;
+}
+
+.rdv-counter {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: rgba(28, 25, 23, 0.78);
+  color: white;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.02em;
+  backdrop-filter: blur(6px);
+}
+
+.rdv-counter-sep {
+  opacity: 0.5;
+  margin: 0 2px;
+}
+
+.rdv-counter-total {
+  opacity: 0.7;
+}
+
+/* Thumbnail strip */
+.rdv-thumbs {
+  display: flex;
+  gap: 5px;
+  overflow-x: auto;
+  padding: 4px 2px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-coral-soft) transparent;
+}
+
+.rdv-thumbs::-webkit-scrollbar { height: 6px; }
+.rdv-thumbs::-webkit-scrollbar-track { background: transparent; }
+.rdv-thumbs::-webkit-scrollbar-thumb { background: var(--accent-coral-soft); border-radius: 3px; }
+
+.rdv-thumb {
+  flex-shrink: 0;
+  width: 60px;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  background: transparent;
+  border: 1.5px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+  overflow: hidden;
+  opacity: 0.65;
+  transition: opacity 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.rdv-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 2px;
+  background: white;
+}
+
+.rdv-thumb:hover {
+  opacity: 1;
+}
+
+.rdv-thumb.active {
+  opacity: 1;
+  border-color: var(--accent-coral);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(255, 107, 91, 0.3);
 }
 
 /* Negative pill — for "no MCP / no server" style call-outs */
@@ -2418,43 +2530,73 @@ h1, h2, h3 {
       <a class="real-deck-meta-cta" href="Marley_Humana_MA_Pitch_v2_May2026.pdf" target="_blank" rel="noopener">Open full PDF →</a>
     </div>
 
-    <div class="real-deck-grid">
-      <img src="img/marley-deck/page-01.png" alt="Marley Humana deck slide 1">
-      <img src="img/marley-deck/page-02.png" alt="slide 2">
-      <img src="img/marley-deck/page-03.png" alt="slide 3">
-      <img src="img/marley-deck/page-04.png" alt="slide 4">
-      <img src="img/marley-deck/page-05.png" alt="slide 5">
-      <img src="img/marley-deck/page-06.png" alt="slide 6">
-      <img src="img/marley-deck/page-07.png" alt="slide 7">
-      <img src="img/marley-deck/page-08.png" alt="slide 8">
-      <img src="img/marley-deck/page-09.png" alt="slide 9">
-      <img src="img/marley-deck/page-10.png" alt="slide 10">
-      <img src="img/marley-deck/page-11.png" alt="slide 11">
-      <img src="img/marley-deck/page-12.png" alt="slide 12">
-      <img src="img/marley-deck/page-13.png" alt="slide 13">
-      <img src="img/marley-deck/page-14.png" alt="slide 14">
-      <img src="img/marley-deck/page-15.png" alt="slide 15">
-      <img src="img/marley-deck/page-16.png" alt="slide 16">
-      <img src="img/marley-deck/page-17.png" alt="slide 17">
-      <img src="img/marley-deck/page-18.png" alt="slide 18">
-      <img src="img/marley-deck/page-19.png" alt="slide 19">
-      <img src="img/marley-deck/page-20.png" alt="slide 20">
-      <img src="img/marley-deck/page-21.png" alt="slide 21">
-      <img src="img/marley-deck/page-22.png" alt="slide 22">
-      <img src="img/marley-deck/page-23.png" alt="slide 23">
-      <img src="img/marley-deck/page-24.png" alt="slide 24">
-      <img src="img/marley-deck/page-25.png" alt="slide 25">
-      <img src="img/marley-deck/page-26.png" alt="slide 26">
-      <img src="img/marley-deck/page-27.png" alt="slide 27">
-      <img src="img/marley-deck/page-28.png" alt="slide 28">
-      <img src="img/marley-deck/page-29.png" alt="slide 29">
-      <img src="img/marley-deck/page-30.png" alt="slide 30">
-      <img src="img/marley-deck/page-31.png" alt="slide 31">
-      <img src="img/marley-deck/page-32.png" alt="slide 32">
-      <img src="img/marley-deck/page-33.png" alt="slide 33">
+    <div class="real-deck-viewer" id="marleyViewer">
+      <button class="rdv-nav rdv-prev" type="button" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
+      <div class="rdv-frame">
+        <img class="rdv-slide" id="rdvSlide" src="img/marley-deck/page-01.png" alt="Marley Humana deck slide 1 of 33">
+        <div class="rdv-counter"><span id="rdvPos">1</span> <span class="rdv-counter-sep">/</span> <span class="rdv-counter-total">33</span></div>
+      </div>
+      <button class="rdv-nav rdv-next" type="button" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M9 5 L16 12 L9 19" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </button>
     </div>
+
+    <div class="rdv-thumbs" id="rdvThumbs"></div>
   </div>
 </section>
+
+<script>
+(function() {
+  const viewer = document.getElementById('marleyViewer');
+  if (!viewer) return;
+  const total = 33;
+  const slide = document.getElementById('rdvSlide');
+  const pos = document.getElementById('rdvPos');
+  const thumbsContainer = document.getElementById('rdvThumbs');
+  const prevBtn = viewer.querySelector('.rdv-prev');
+  const nextBtn = viewer.querySelector('.rdv-next');
+  let idx = 1;
+
+  const pad = (n) => String(n).padStart(2, '0');
+  const src = (n) => 'img/marley-deck/page-' + pad(n) + '.png';
+
+  // Build thumbnail strip
+  const thumbs = [];
+  for (let i = 1; i <= total; i++) {
+    const t = document.createElement('button');
+    t.className = 'rdv-thumb';
+    t.type = 'button';
+    t.setAttribute('aria-label', 'Go to slide ' + i);
+    const img = document.createElement('img');
+    img.src = src(i);
+    img.alt = '';
+    img.loading = 'lazy';
+    t.appendChild(img);
+    t.addEventListener('click', (e) => { e.stopPropagation(); go(i); });
+    thumbsContainer.appendChild(t);
+    thumbs.push(t);
+  }
+
+  function go(n) {
+    idx = ((n - 1 + total) % total) + 1;
+    slide.src = src(idx);
+    slide.alt = 'Marley Humana deck slide ' + idx + ' of ' + total;
+    pos.textContent = idx;
+    thumbs.forEach((t, i) => t.classList.toggle('active', i + 1 === idx));
+    const activeThumb = thumbs[idx - 1];
+    if (activeThumb && activeThumb.scrollIntoView) {
+      activeThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+  }
+
+  prevBtn.addEventListener('click', (e) => { e.stopPropagation(); go(idx - 1); });
+  nextBtn.addEventListener('click', (e) => { e.stopPropagation(); go(idx + 1); });
+
+  go(1);
+})();
+</script>
 
 <!-- ==========================================
      SLIDE 10: Process Summary — 5 Steps
