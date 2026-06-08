@@ -3452,6 +3452,12 @@ h1, h2, h3 {
      ========================================== -->
 <script>
 (function() {
+  // Always open on slide 1 — disable the browser's scroll-position restore
+  // so revisiting the URL doesn't land mid-deck.
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+  window.addEventListener('load', () => window.scrollTo(0, 0));
+
   const slides = document.querySelectorAll('.slide:not([hidden])');
   const dotsContainer = document.getElementById('navDots');
   const counter = document.getElementById('slideCounter');
