@@ -41,9 +41,18 @@ The canonical source for EPCH tokens is the inline CSS `:root` block in
 - Shadow (card): `0 1px 3px rgba(28,25,23,0.06), 0 1px 2px rgba(28,25,23,0.04)`
 - Shadow (elevated): `0 4px 12px rgba(28,25,23,0.08), 0 1px 3px rgba(28,25,23,0.06)`
 
-### Wordmark / logo
-- Monospace `{ EPCH }` curly-brace wordmark — see `favicon.svg`
-  (coral circle, white SF Mono text, curly braces at ~0.65 opacity).
+### Logo / wordmark
+- **Primary logo:** `epch-logo.svg` — coral circle (`#F07563`), white SF Mono
+  `EPCH` set between `<` and `>` brackets (brackets at ~0.5 opacity). Source of
+  truth for the mark.
+- **Raster (for DOCX/Office, where SVG isn't reliable):** `epch-logo-cropped.png`
+  — transparent-background PNG cropped to the circle. Rasterize from the SVG via
+  `qlmanage -t -s 600 -o . epch-logo.svg`, then crop to the coral circle and
+  knock out the white background.
+- **Favicon variant:** `favicon.svg` — same coral circle but with the `{ EPCH }`
+  curly-brace wordmark instead of angle brackets.
+- **Footer wordmark (text):** `{ EPCH }` in coral monospace (Consolas/SF Mono),
+  used as a lightweight signature where a logo image is too heavy.
 
 ---
 
