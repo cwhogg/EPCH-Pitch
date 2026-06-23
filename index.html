@@ -1250,6 +1250,15 @@ h1, h2, h3 {
   text-align: center;
 }
 
+/* Slide 8 — anchor headline to top and compress so nothing clips on short viewports */
+section[data-slide="8"] { align-items: flex-start; padding-top: 36px; padding-bottom: 28px; }
+section[data-slide="8"] .slide-headline { font-size: 27px; }
+section[data-slide="8"] .before-after-prompt { padding: 10px 16px; margin-bottom: 14px; }
+section[data-slide="8"] .before-after-prompt-text { font-size: 15px; }
+section[data-slide="8"] .comparison-label { margin-bottom: 8px; }
+section[data-slide="8"] .screen-set { max-width: 400px; margin: 0 auto; gap: 10px; }
+section[data-slide="8"] .screen-caption { margin-top: 8px; font-size: 11px; }
+
 /* ==========================================
    SLIDE 9: How Skills Work — Use Case Cards
    ========================================== */
@@ -2693,7 +2702,7 @@ h1, h2, h3 {
 <section class="slide" data-slide="8">
   <div class="slide-inner">
     <h2 class="slide-headline" style="margin-bottom: 6px;">Personalizing Claude with local Skills produces 10x better output from the same prompt</h2>
-    <p class="slide-subhead" style="margin-bottom: 18px;">Same employee, same ask — but with company-specific Skills loaded into Claude Chat, the output knows your brand, voice and context.</p>
+    <p class="slide-subhead" style="margin-bottom: 12px; font-size: 16px;">Same employee, same ask — but with company-specific Skills loaded into Claude Chat, the output knows your brand, voice and context.</p>
 
     <div class="before-after-prompt">
       <div class="before-after-prompt-label">Prompt</div>
