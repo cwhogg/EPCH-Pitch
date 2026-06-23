@@ -1259,6 +1259,20 @@ h1, h2, h3 {
   gap: 20px;
 }
 
+/* Compact variant — fits 6 cards in two rows on one slide */
+.use-case-grid-compact { gap: 14px; }
+.use-case-grid-compact .use-case-card { padding: 16px 18px; }
+.use-case-grid-compact .use-case-title { margin-bottom: 12px; }
+.use-case-grid-compact .use-case-number { width: 24px; height: 24px; font-size: 13px; }
+.use-case-grid-compact .use-case-title-text { font-size: 15px; }
+.use-case-grid-compact .use-case-section-label { font-size: 10px; margin-bottom: 4px; }
+.use-case-grid-compact .use-case-tag { font-size: 11px; padding: 2px 8px; }
+.use-case-grid-compact .use-case-skill-box { padding: 8px 12px; }
+.use-case-grid-compact .use-case-skill-item { font-size: 12px; line-height: 1.45; }
+.use-case-grid-compact .use-case-arrow { padding: 4px 0; }
+.use-case-grid-compact .use-case-arrow svg { width: 14px; height: 14px; }
+.use-case-grid-compact .use-case-prompt { font-size: 12px; }
+
 .use-case-card {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
@@ -2372,8 +2386,8 @@ h1, h2, h3 {
      ========================================== -->
 <section class="slide" data-slide="7us">
   <div class="slide-inner">
-    <h2 class="slide-headline">How it works: building personalized AI Skills from your company's knowledge</h2>
-    <div class="use-case-grid">
+    <h2 class="slide-headline">How it works: common Skills to improve company operations and productivity</h2>
+    <div class="use-case-grid use-case-grid-compact">
 
       <!-- Use Case 1: Pitch Deck -->
       <div class="use-case-card">
@@ -2462,6 +2476,93 @@ h1, h2, h3 {
 
         <div class="use-case-section-label">Employee asks</div>
         <div class="use-case-prompt">"Summarize Eisai QBR and overall program status"</div>
+      </div>
+
+      <!-- Use Case 4: Ops Tracking -->
+      <div class="use-case-card">
+        <div class="use-case-title">
+          <div class="use-case-number">4</div>
+          <div class="use-case-title-text">Ops Tracking</div>
+        </div>
+
+        <div class="use-case-section-label">We upload</div>
+        <div class="use-case-tags">
+          <span class="use-case-tag">Weekly/monthly team updates</span>
+          <span class="use-case-tag">OKRs &amp; targets</span>
+          <span class="use-case-tag">Past status reports</span>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Skill learns</div>
+        <div class="use-case-skill-box">
+          <div class="use-case-skill-item">How each team reports progress</div>
+          <div class="use-case-skill-item">Tracking status against OKRs</div>
+          <div class="use-case-skill-item">Synthesizing a company-wide exec rollup</div>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Employee asks</div>
+        <div class="use-case-prompt">"Draft this week's exec memo from every team's update"</div>
+      </div>
+
+      <!-- Use Case 5: Thought Partner -->
+      <div class="use-case-card">
+        <div class="use-case-title">
+          <div class="use-case-number">5</div>
+          <div class="use-case-title-text">Thought Partner</div>
+        </div>
+
+        <div class="use-case-section-label">We upload</div>
+        <div class="use-case-tags">
+          <span class="use-case-tag">Company strategy &amp; principles</span>
+          <span class="use-case-tag">Decision history</span>
+          <span class="use-case-tag">Market context</span>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Skill learns</div>
+        <div class="use-case-skill-box">
+          <div class="use-case-skill-item">A panel of advisor lenses</div>
+          <div class="use-case-skill-item">First-principles, contrarian &amp; skeptic views</div>
+          <div class="use-case-skill-item">Strategist &amp; marketer perspectives</div>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Employee asks</div>
+        <div class="use-case-prompt">"Pressure-test this go-to-market plan"</div>
+      </div>
+
+      <!-- Use Case 6: Critic -->
+      <div class="use-case-card">
+        <div class="use-case-title">
+          <div class="use-case-number">6</div>
+          <div class="use-case-title-text">Critic</div>
+        </div>
+
+        <div class="use-case-section-label">We upload</div>
+        <div class="use-case-tags">
+          <span class="use-case-tag">Company principles &amp; voice</span>
+          <span class="use-case-tag">Quality bar &amp; past edits</span>
+          <span class="use-case-tag">Company KnowledgeBase</span>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Skill learns</div>
+        <div class="use-case-skill-box">
+          <div class="use-case-skill-item">Where content drifts from company voice</div>
+          <div class="use-case-skill-item">How to spot gaps &amp; vague claims</div>
+          <div class="use-case-skill-item">When to ask clarifying questions</div>
+        </div>
+
+        <div class="use-case-arrow"><svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M4 9l4 4 4-4" stroke="var(--accent-coral)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+
+        <div class="use-case-section-label">Employee asks</div>
+        <div class="use-case-prompt">"Review this memo for alignment and gaps"</div>
       </div>
 
     </div>
